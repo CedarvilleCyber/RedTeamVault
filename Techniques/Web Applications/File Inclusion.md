@@ -24,4 +24,9 @@ RFI is even more problematic, because it can lead to immediate RCE. If a web ser
 *Even if a webshell cannot be uploaded and called into* we may still upload a 
 PHP reverse shell and gain command execution on the web server.
 
+RFI example from THM Jr Pentester Path:
+![[Pasted image 20241016123430.png]]
+
+Essentially, if a website allows us to choose files, we can trick it into sending a GET request to our machine or website. Then, the victim website will unwittingly execute our malicious file. 
+
 For more information on File Inclusion vulnerabilities, see the TryHackMe Junior Pentester Path. In its' Intro to Web Hacking module, they have a room on File Inclusion vulnerabilities. 
