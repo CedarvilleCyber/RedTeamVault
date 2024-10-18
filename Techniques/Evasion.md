@@ -48,7 +48,7 @@ int main() {
 }
 ```
 
-## User Account Control
+# User Account Control
 This deserved its own TryHackMe room, so I'm separating it out here. 
 
 ### GUI Bypasses
@@ -76,6 +76,7 @@ reg add "HKCU\Software\Classes\ms-settings\CurVer" /d ".ccu" /f
 ```
 
 An automated solution to UAC bypasses can be found here: https://github.com/hfiref0x/UACME
+
 # Maldocs
 Maldocs refers to malicious documents created in Office or other applications capable of running code from macros. 
 
@@ -92,7 +93,7 @@ powershell.exe -Version 2 # Haha get juked
 - Powershell Reflection
 	- AMSIUtils can be used to set the value of "amsiInitFailed" in the binary itself, convincing AMSI that it is not running and therefore cannot detect anything. 
 ```powershell
-[Ref].Assembly.GetType('System.Management.Automation.AmsiUtils').GetField('amsiInitFailed','NonPublic,Static').SetValue($null,$true)
+[Ref].Assembly.GetType('System.Management.Automation.AmsiUtils').GetField('amsiInitFailed','NonPublic,Static').SetValue($null,$true) # Gaslight the system
 ```
 - String Concatenation
 	- If a string is broken up, it is stored in different places in memory, try not to keep any keywords together. Use [[AMSITrigger]] to detect locations. 
@@ -150,7 +151,7 @@ There are a few ways to determine if your application is running in a sandbox.
 2. Geolocation Check
 	- If the binary is running in a location it was not meant for, it is likely running in a sandbox. This especially applies to when you find out it is running in California or similar. 
 3. System Information Check
-	- Sandbox environments are resource-constrained. If the machine you are running in has only one CPU, it is highly likely it is running in a sandbox. The sandbox likely does not have the user accounts you are tareting. A sandbox will not match your target system. Use this to your advantage. 
+	- Sandbox environments are resource-constrained. If the machine you are running in has only one CPU, it is highly likely it is running in a sandbox. The sandbox likely does not have the user accounts you are targeting. A sandbox will not match your target system. Use this to your advantage. 
 4. Network Information Check
 	- A sandbox is likely not joined to the same domain you are targeting. A sandbox likely does not have the same group of Domain Administrators as your target machine. 
 
@@ -161,7 +162,7 @@ ETW will be our main enemy in this section.
 
 ETW is split into Controllers, Providers, and Consumers. 
 - Controllers - Build and configure event tracing sessions.
-- Providers - Generate events to these sessions
+- Providers - Generate events to these sessions.
 - Consumers - Interpret the events they are receiving. 
 
 Patching ETW on-the-fly can be accomplished to avoid detection. By replacing the call to `EtwEventWrite` at its base address with a `ret 14h` we can totally negate the function call altogether. The necessary code can be found below. 
