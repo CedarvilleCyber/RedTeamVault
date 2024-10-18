@@ -79,6 +79,7 @@ MAC - Media Access Control
 ME - Management Engine
 MITM - Man In The Middle
 MSF - MetaSploit Framework
+mTLS - Mutual TLS
 M$ - Microsoft
 
 NAC - Network Access Control

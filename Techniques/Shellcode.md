@@ -54,7 +54,6 @@ int main()
 - Thread Injection
 - DLL Injection
 
-
 # Staged Payloads
 We can generate staged payloads with [[MSFVenom]]. 
 

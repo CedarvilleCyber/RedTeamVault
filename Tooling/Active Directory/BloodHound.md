@@ -24,3 +24,8 @@ Bloodhound provides many analytical queries to show us the quickest path to the 
 - Find Kerberoastable Users with most privileges
 
 https://github.com/BloodHoundAD/BloodHound
+
+# Custom Queries
+```shell
+MATCH p=(c1:Computer)-[r1:MemberOf*1..]->(g:Group)-[r2:AdminTo]->(n:Computer) RETURN p # Match computers whose accounts have AdminTo rights over other machines 
+```
