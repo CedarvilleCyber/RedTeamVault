@@ -23,4 +23,12 @@ The ../ notation moves the program from the current directory into its' parent d
 >[!note]
 > It's entirely possible that you'll encounter a filtration system that combines multiple filtration methods. Don't give up after trying the basics- design your path traversals to defeat combinations of multiple filtration methods if necessary!
 
+
+
+### Cookies:
+THM example: `THM=../../../../etc/flag%00`
+(This is the cookie for tryhackme.com/r/room/fileinc challenge question 2)
+
+
+
 For futher research, see TryHackMe's File Inclusion room in the Intro To Web Hacking module of the Junior Pentesting Path. 
