@@ -10,7 +10,7 @@ git pull origin <branch-name>
 When you're done taking notes for the moment:
 ```bash
 git add . # Stage your changes
-git commit -m "Your commit message"
+git commit -m "Your commit message" # Wrap your commit message in double quotes
 git push origin <branch-name> # Push changes to the remote branch
 ```
 
