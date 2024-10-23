@@ -19,3 +19,5 @@ Appendices should contain the long-form explanations of each attack and attack p
 
 # Screenshots
 Make all details legible, and add supporting notation as necessary. [[Greenshot]] is an excellent tool for this. 
+
+> [!important] Report as you go! This makes it much easier to get screenshots you forgot about...
