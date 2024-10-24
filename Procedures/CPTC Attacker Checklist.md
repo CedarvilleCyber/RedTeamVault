@@ -60,6 +60,7 @@ Utilize available techniques to stay hidden on the endpoint and penetrate deeper
 - [[Active Directory]]
 
 ### Reporting
+[[Reporting]]
 - Use existing templates. If they are not available in the CPTC OneDrive then you should emulate a popular format like OffSec's. Plenty of OSCP report template generators out there. 
 	- https://docs.sysreptor.com/
 		- Can self-host for free, but limited to 3 users.
