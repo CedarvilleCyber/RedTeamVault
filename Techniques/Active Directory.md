@@ -334,3 +334,10 @@ reg save HKLM\system C:\users\Administrator\Desktop\system-reg
 ```
 - LSASS
 [[Mimikatz]] can dump and unprotect LSASS using sekurlsa and mimidrv.sys. 
+
+# Additional Resources
+https://book.hacktricks.xyz/windows-hardening/active-directory-methodology
+https://seamlessintelligence.com.au/sliver_2.html
+https://github.com/0xJs/RedTeaming_CheatSheet/blob/main/windows-ad/Domain-Enumeration.md
+[https://wadcoms.github.io](https://wadcoms.github.io/)
+https://github.com/61106960/adPEAS

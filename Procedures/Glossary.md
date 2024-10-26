@@ -127,6 +127,7 @@ SMM - System Management Mode
 SMTP - Simple Mail Tansport Protocol
 SNMP - Simple Network Management Protocol
 SO - Shared Object
+SOW - Scope Of Work
 SPN - Service Principal Name
 SQL - Structured Query Language
 SQLi - SQL Injection

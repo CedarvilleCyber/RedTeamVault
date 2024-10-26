@@ -7,6 +7,7 @@ AV/EDR Evasion is an arms race that is mostly beyond the scope of CPTC. However,
 
 - [[ScareCrow]]
 - [[Shellter]]
+- [[Veil]]
 - [[MSFVenom]] options
 - Encoding
 	- Encoding a payload is unlikely to defeat a scanner worth its salt. 
