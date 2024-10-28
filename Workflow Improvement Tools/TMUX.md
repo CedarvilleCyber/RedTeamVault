@@ -16,3 +16,25 @@ However, many people remap the tmux prefix to either `Ctrl A` or `Ctrl Space`, d
 - 0 to 9 - takes you to the corresponding window (navigates through windows 0-9)
 - ? - Lists all key bindings.
 
+### Copying in tmux:
+First, turn your mouse on by using the prefix, followed by the colon, then typing set mouse on. With default keybinds, that would be this: `ctrl B` followed by `:`, then `set mouse on`.
+
+1. **Enter Copy Mode**:
+    - Press `Ctrl + b` to send a command to `tmux`.
+    - Then press `[` to enter copy mode.
+
+2. **Navigate to the Text**:
+    - Use arrow keys (or `hjkl` in Vim mode) to move the cursor to where you want to start copying.
+
+3. **Start Selecting Text**:
+    - Press `Space` to start selecting the text.
+    - Drag the cursor over the text you want to copy.
+
+4. **Copy the Text**:
+    - Press `Enter` to copy the selected text to the tmux clipboard.
+
+### Pasting in tmux:
+
+1. **Paste the Copied Text**:
+    - Press `Ctrl + b` to enter tmux command mode.
+    - Then press `]` to paste the copied text.
