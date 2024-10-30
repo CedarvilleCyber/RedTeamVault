@@ -11,6 +11,12 @@ Tools:
 - [[Curl]]
 - [[OpenSSL]]
 - [[Telnet]]
+- [[Hydra]]
+
+Checklist:
+- Check for existing access
+- Check for vulnerabilities
+- Bruteforce
 
 `curl -k 'imaps://10.129.14.128' --user user:p4ssw0rd -v`
 `curl -k 'imaps://10.129.14.128' --user cry0l1t3:1234 -v`
