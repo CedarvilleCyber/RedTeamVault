@@ -53,6 +53,7 @@ int main()
 - Process Hollowing
 - Thread Injection
 - DLL Injection
+Reference THM for example code. Most of these techniques are out of scope for competitions. 
 
 # Staged Payloads
 We can generate staged payloads with [[MSFVenom]]. 
@@ -70,4 +71,3 @@ An example C# stager can be found here: https://github.com/mvelazc0/defcon27_csh
 
 >[!danger] Detection Risk
 >Shellcode is inherently risky. Use the tactics described in [[Evasion]] to help your code avoid detection by AV/EDR/XDR.
-
