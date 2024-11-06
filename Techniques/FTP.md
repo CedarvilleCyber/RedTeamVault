@@ -6,6 +6,11 @@ We are looking for open FTP shares with authenticated or guest access.
 
 Commands for ftp command line tool. 
 
+Checklist:
+- Check for anonymous access
+- Check for vulnerabilities
+- Bruteforce
+
 |**Commands**|**Description**|
 |---|---|
 |`connect`|Sets the remote host, and optionally the port, for file transfers.|
