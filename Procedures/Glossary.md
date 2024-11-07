@@ -43,6 +43,7 @@ FTP - File Transfer Protocol
 
 GID - Group ID
 GUID - Globally Unique ID
+GPO - Group Policy Object
 
 HTTP - HyperText Tranfer Protocol
 HTTPS - HTTP Secure
