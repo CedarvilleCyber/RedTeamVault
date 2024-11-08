@@ -27,7 +27,6 @@ These are all the places you can hide cron jobs:
 - Set the permissions on the file and directory by running `chmod 700 ~/.ssh` and 
   `chmod 600 ~/.ssh/authorized_keys`
 
-
 #### Windows
 - Registry Run Keys
 - Scheduled Tasks
