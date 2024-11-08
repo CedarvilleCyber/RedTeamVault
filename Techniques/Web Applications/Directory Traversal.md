@@ -41,11 +41,8 @@ Generic form:
 
 You can also edit and resend HTTP requests from the developer tools (Inspect Element) window, which allows you to change the cookies and accomplish what you need to. 
 
-
 ### Cookies:
 THM example: `THM=../../../../etc/flag%00`
 (This is the cookie for tryhackme.com/r/room/fileinc challenge question 2)
-
-
 
 For futher research, see TryHackMe's File Inclusion room in the Intro To Web Hacking module of the Junior Pentesting Path. 
