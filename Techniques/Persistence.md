@@ -26,7 +26,10 @@ These are all the places you can hide cron jobs:
 - Add your public key to the `~/.ssh/authorized_keys` file in every user's directory. Create the file if it isn't already present, then add a new line in the file and put your public key there.
 - Set the permissions on the file and directory by running `chmod 700 ~/.ssh` and 
   `chmod 600 ~/.ssh/authorized_keys`
-
+###### Users' .bashrc file:
+- If a user has bash as their default shell (and most users do,) then they will have a `.bashrc` file in their home directory. (The '.' means it's a hidden file, so use ls -l to view it.) This file is a shell config file that is run every time that the associated user starts a session (every time they log on). The .bashrc file basically operates like a script that's run every time a user logs on.
+- Zsh (another popular shell) has an equivalent config file called `.zshrc`, so keep that in mind.
+- ==Put a reverse shell in the `.bashrc` of every user account. 
 
 #### Windows
 - Registry Run Keys
@@ -47,7 +50,7 @@ These are all the places you can hide cron jobs:
 	- Replace the binPath property of an existing Windows service with your implant to avoid creating a new service. Simple commands can also be used as binPath, meaning `net user redteam password /add` is permissible. If you plan to use an implant as a service make sure to compile as `exe-service` with [[MSFVenom]].
 
 
-#### PHP (Web Servers)
+#### Web Servers
 ###### PHP Command Parameter
 If you find a web server that uses PHP, put this code snippet somewhere in the PHP page. Then, you'll be able to send commands to the website via GET and POST requests.
 ```php
@@ -77,6 +80,14 @@ Command execution example: `curl -H "CMD: ls" http://example.com/webscript.php`
 - To conduct this attack, steal a session ID and change your `PHPSESSID` cookie to it (in "inspect element" or a similar browser tool) to hijack the session and login as an authorized user.
 >[!tip] Troubleshooting Tip
 >If you can't find the session IDs in `var/lib/php/sessions`, they could still be on disk somewhere. PHP has a configuration text file called `php.ini` that's generally located in `/etc/php.ini` or `/usr/local/lib/php.ini`, so check the `php.ini` config file to see if the session IDs are stored elsewhere.
+
+###### Apache Backdoor (obsolete)
+- This method is outdated, but may work on systems running Apache 2 or similarly old versions. The GitHub repo was last updated in 2015, and the code is even older than that, so don't expect results on newer systems. 
+- Additionally, threat detection systems like rkhunter can trivially detect this backdoor, so if you use it, try to obfuscate it somehow. 
+- If you want to use it, though, go for it. The READMEs in the GitHub repo should be sufficient to help you get it set up. 
+This is the link to the GitHub page: https://github.com/sajith/mod-rootme
+
+
 ## Domain Persistence
 ### Credentials
 You can acquire hashes of users using [[Mimikatz]]'s DCSync functionality for every user. This will grant access to the krbtgt account for golden tickets, etc. 
