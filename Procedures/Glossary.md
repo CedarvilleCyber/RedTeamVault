@@ -166,3 +166,5 @@ XSS - cross (X)-Site Scripting
 XXE - XML eXternal Entity injection
 
 YAML - YAML Ain't Markup Language
+
+ZFS - Zettabyte File System
