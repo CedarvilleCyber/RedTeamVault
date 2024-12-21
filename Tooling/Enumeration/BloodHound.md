@@ -12,6 +12,7 @@ Using the C# distribution for Windows:
 Starting up the local examination server to parse the data returned from the top two. 
 ```shell
 neo4j start # Start neo4j server hosting the web interface and database
+sleep 60 # Give it time
 bloodhound # Start up the interactive graphing software to query the database.
 ```
 

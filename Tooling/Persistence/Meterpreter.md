@@ -1,0 +1,1 @@
+Meterpreter is an implant and framework used in conjunction with [[Metasploit]]'s `exploit/multi/handler` handler framework. 
