@@ -3,5 +3,5 @@ Responder responds to broadcast or targeted queries for many types of servers wi
 ```shell
 responder -I <interface> -A # Passive; do not respond, only listen
 
-responder -I <interface> # Poisons all protocols (LLMNR, HTTP, SMB, NBT-NS, etc...)
+responder -I <interface> -v # Poisons all protocols (LLMNR, HTTP, SMB, NBT-NS, etc...)
 ```
