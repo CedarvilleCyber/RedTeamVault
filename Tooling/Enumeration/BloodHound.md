@@ -1,5 +1,8 @@
 AWESOME resource for graphically laying out a complex domain and identifying complex privilege escalation strategies through a network all the way to Domain Admin
 
+>[!warning] 
+>Make sure you use the correct collector version for the version of BloodHound you are using or the data will be incompatible and will not import.
+
 Using the python distribution for Linux:
 ```shell
 bloodhound-python -u <user> -p <password> -ns <DC_IP> -d <domain> -c all # Gather domain information

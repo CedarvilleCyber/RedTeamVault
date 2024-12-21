@@ -28,6 +28,7 @@ CSRF - Cross-Site Request Forgery
 DA - Domain Administrator
 DACL - Discretionary ACL
 DB - DataBase
+DBI - Dynamic Binary Instrumentation
 DC - Domain Controller; Domain Component
 DEP - Data Execution Prevention
 DES - Data Encrpytion Standard
@@ -74,6 +75,7 @@ LFI - Local File Inclusion
 LLMNR - Link-Local Multicast Name Resolution
 LOL - Living Off the Land
 LOLBins - LOL BINaries
+LOLBAS - LOL Binaries And Scripts
 LSASS - Local Security Authority Subsystem Service
 
 MAC - Media Access Control

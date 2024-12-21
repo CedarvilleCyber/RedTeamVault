@@ -39,7 +39,7 @@ These are all the places you can hide cron jobs:
 - DLL Hijacking
 - Poisoning Shortcuts
 - Backdoor Applications
-	- [[MSFVenom]] has functionality for this.
+	- [[MSFVenom]] has functionality for this, but it is not very sturdy
 - Replace Default Applications for File types
 	- HKEY_CLASSES_ROOT???
 - Malicious Services
@@ -47,6 +47,9 @@ These are all the places you can hide cron jobs:
 
 
 #### PHP (Web Servers)
+
+###### PHP Webshell
+[[WWWolf PHP Webshell]] is a good one. [[Antak]] for ASPX web servers. 
 ###### PHP Command Parameter
 If you find a web server that uses PHP, put this code snippet somewhere in the PHP page. Then, you'll be able to send commands to the website via GET and POST requests.
 ```php
