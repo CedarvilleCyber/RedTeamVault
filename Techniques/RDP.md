@@ -8,6 +8,9 @@ Brute with:
 - [[Crowbar]]
 - [[RDPassSpray]] (AD Environments)
 
+Access with:
+- [[XFreeRDP]]
+
 Checklist
 - Enumerate Credentials elsewhere and login
 - Enumerate version information and search for exploitable vulnerabilities.

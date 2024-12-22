@@ -2,6 +2,8 @@ TCP//UDP//53
 
 Enumeration techniques for a local NS server. 
 
+>[!note] DNS and DHCP are often handled by the AD Domain Controller inside an AD Domain
+
 We are looking for 
 - DNS records to give us more clear targeting information for the network
 	- A zone transfer will give us the most complete network map

@@ -4,7 +4,7 @@ Tools:
 - [[Proxychains]]
 - [[Metasploit]]
 - [[Meterpreter]]
-- [[Xfreerdp]]
+- [[XFreeRDP]]
 - [[Socat]]
 - [[Rpivot]]
 - [[Sshuttle]]

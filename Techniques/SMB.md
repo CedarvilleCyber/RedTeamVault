@@ -34,3 +34,6 @@ These scripts will identify EternalBlue, MS08-067 Netapi vulns, etc.
 - Enumerate SMB version, users, additional information with as many tools as possible.
 - If vulnerabilities are present, exploit
 - If not, start a bruteforce with known users in the background.
+
+>[!note] 
+>Recheck when new credentials are discovered!

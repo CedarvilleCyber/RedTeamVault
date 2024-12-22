@@ -1,4 +1,4 @@
-A tool for routing connections over HTTP or SOCKS proxies. 
+A tool for routing connections over HTTP or SOCKS proxies. This does NOT create proxies, but just routes tool/network traffic through existing proxies. Good proxies include SSH SOCKS4 proxies via the `-D` parameter or Meterpreter implants running under `autoroute` parms and a MSF SOCKS4 proxy overlaid. 
 
 > [!tip]
 > Make sure you understand your networking needs for your proxies. Metasploit callbacks must be modified to work correctly with a proxy, and will not use proxychains.

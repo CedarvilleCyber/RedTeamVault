@@ -6,6 +6,7 @@ AV/EDR Evasion is an arms race that is mostly beyond the scope of CPTC. However,
 >Your shellcode should already be generated to use the below tools save MSFVenom. Use the note at [[Shellcode]] to construct your shellcode before using these techniques.
 
 - [[ScareCrow]]
+- [[Pestilence]]
 - [[Shellter]]
 - [[Veil]]
 - [[MSFVenom]] options

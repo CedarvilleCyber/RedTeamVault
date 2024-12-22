@@ -59,14 +59,19 @@ Ex: `sudo ln -s /etc/init.d/syslogd-helper /etc/rc3.d/S99syslogd-helper`
 - DLL Hijacking
 - Poisoning Shortcuts
 - Backdoor Applications
-	- [[MSFVenom]] has functionality for this.
+	- [[MSFVenom]] has functionality for this, but it is not very sturdy
 - Replace Default Applications for File types
 	- HKEY_CLASSES_ROOT???
 - Malicious Services
 	- Replace the binPath property of an existing Windows service with your implant to avoid creating a new service. Simple commands can also be used as binPath, meaning `net user redteam password /add` is permissible. If you plan to use an implant as a service make sure to compile as `exe-service` with [[MSFVenom]].
 
-
 ### Web Servers
+=======
+#### PHP (Web Servers)
+
+###### PHP Webshell
+[[WWWolf PHP Webshell]] is a good one. [[Antak]] for ASPX web servers. 
+
 ###### PHP Command Parameter
 If you find a web server that uses PHP, put this code snippet somewhere in the PHP page. Then, you'll be able to send commands to the website via GET and POST requests.
 ```php
