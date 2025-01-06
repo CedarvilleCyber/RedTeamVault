@@ -21,3 +21,5 @@ for /L %a in (1,1,254) do ping -n 1 192.168.1.%a
 [[Tcpdump]] or [[Wireshark]] could easily be used to identify hosts on a network that are broadcasting or communicating with the attacker machine. 
 
 [[Responder]] in passive mode could help to identify more infrastructure as well as IP addresses. 
+
+Once you are inside a network use the arp cache and network information of compromised machines to identify new target infrastructure before ping sweeps or subnet scans, as this information is more authoritative. 
