@@ -3,7 +3,7 @@ Conduct reconnaissance of the
 - Domain
 - Machines
 - Applications/Services
-- People
+- Accounts
 Different tools for each. 
 
 # 2. Enumeration

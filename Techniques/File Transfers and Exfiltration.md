@@ -42,7 +42,6 @@ impacket-smbserver -smb2support -username <user to auth> -password <password to 
 ```
 
 Here you can use File Explorer or [[net]] on Windows to map the drive and [[SMBClient]] on Linux. 
-## Client Side
 
 # Exfiltration
 ## Raw TCP Sockets
