@@ -6,9 +6,6 @@ Rustscan is a faster [[Nmap]] alternative
 >[!note] 
 >Additionally, it is likely possible to make Nmap work quickly if necessary. I have used Rustscan more and liked it less. It is certainly a less stable version, and I am leaning more and more towards Nmap instead. 
 
-# Install
-TODO: Add Install instructions
-
 # Multiple IP Scanning
 
 You can scan multiple IPs using a comma separated list like so:

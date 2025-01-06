@@ -21,4 +21,4 @@ I hope this vault can be of use to you, as that was always its intended purpose.
 Happy Hacking!
 -asterisk
 
-![[Pasted image 20250106003320.png]]
+![[opfor.png]]

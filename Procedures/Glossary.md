@@ -3,6 +3,8 @@ All acronyms found anywhere in this vault should be documented here in case conf
 ACE - Access Control Entry
 ACL - Access Control List
 AD - Active Directory
+ADCS - AD Certificate Services
+ADDS - AD Domain Services
 AES - Advanced Encryption Standard
 AMSI - Anti-Malware Scan Interface
 AP - Access Point
@@ -17,6 +19,7 @@ BACNET - Building Automation and Control NETwork
 BEEF - BrowsEr Exploitation Framework
 BLE - Bluetooth Low-Energy
 BMC - Baseboard Management Controller
+BOF - Buffer OverFlow; Beacon Object File
 BSD - Berkely Software Distribution
 
 C2 - Command and Control
@@ -38,6 +41,7 @@ DNS - Domain Name Service
 
 EDR - Endpoint Detection and Response
 ELF - Executable and Linking Format
+ETW - Event Tracing for Windows
 EUID - Effective UID
 
 FTP - File Transfer Protocol
