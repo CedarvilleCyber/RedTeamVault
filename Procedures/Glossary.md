@@ -22,6 +22,7 @@ BMC - Baseboard Management Controller
 BOF - Buffer OverFlow; Beacon Object File
 BSD - Berkely Software Distribution
 
+CARP - Common Address Redundancy Protocol
 C2 - Command and Control
 CIDR - Classless Inter-Domain Routing
 CN - Common Name
