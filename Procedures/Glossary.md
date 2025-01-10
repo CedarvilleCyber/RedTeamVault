@@ -23,9 +23,11 @@ BOF - Buffer OverFlow; Beacon Object File
 BSD - Berkely Software Distribution
 
 C2 - Command and Control
+CCDC - Collegiate Cyber Defense Competition
 CIDR - Classless Inter-Domain Routing
 CN - Common Name
 COMSEC - COMmunications SECurity
+CPTC - Collegiate Penetration Testing Competition
 CSRF - Cross-Site Request Forgery
 
 DA - Domain Administrator

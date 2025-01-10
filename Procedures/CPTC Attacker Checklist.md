@@ -62,7 +62,7 @@ Utilize available techniques to stay hidden on the endpoint and penetrate deeper
 ### Reporting
 [[Reporting]]
 - Use existing templates. If they are not available in the CPTC OneDrive then you should emulate a popular format like OffSec's. Plenty of OSCP report template generators out there. 
-	- https://docs.sysreptor.com/
+	- [[SysReptor]]
 		- Can self-host for free, but limited to 3 users.
 	- https://github.com/noraj/OSCP-Exam-Report-Template-Markdown
 	- https://github.com/GhostManager/Ghostwriter

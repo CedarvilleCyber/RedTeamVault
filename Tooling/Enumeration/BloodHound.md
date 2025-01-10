@@ -1,7 +1,7 @@
 AWESOME resource for graphically laying out a complex domain and identifying complex privilege escalation strategies through a network all the way to Domain Admin
 
 >[!warning] 
->Make sure you use the correct collector version for the version of BloodHound you are using or the data will be incompatible and will not import.
+>Make sure you use the correct collector version for the version of BloodHound you are using or the data will be incompatible and will not import. Community versions of both also exist, and differ significantly with the versions you will find installed by default on Kali.
 
 Using the python distribution for Linux:
 ```shell
