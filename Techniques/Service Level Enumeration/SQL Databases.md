@@ -17,6 +17,7 @@ MySQL:
 
 MSSQL:
 [[Sqsh/Sqlcmd]]
+[[Impacket]]
 
 xp_cmdtree command execution, xp_dirtree and xp_subdirs hash stealing, local file read, user impersonation, linked servers, etc...
 TODO: Make this readable and add details.

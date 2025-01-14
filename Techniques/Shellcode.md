@@ -71,3 +71,7 @@ An example C# stager can be found here: https://github.com/mvelazc0/defcon27_csh
 
 >[!danger] Detection Risk
 >Shellcode is inherently risky. Use the tactics described in [[Evasion]] to help your code avoid detection by AV/EDR/XDR.
+
+>[!note]
+>Sliver and Meterpreter have built-in stagers that both use the same protocol, therefore you may use [[MSFVenom]]-generated stagers to retrieve slivers with a sliver stage-listener. 
+ 

@@ -28,13 +28,11 @@ These are all the places you can hide cron jobs:
 ##### Users' .bashrc file:
 - If a user has bash as their default shell (and most users do,) then they will have a `.bashrc` file in their home directory. (The '.' means it's a hidden file, so use `ls -l` to view it.) This file is a shell config file that is run every time that the associated user starts a session (every time they log on). The .bashrc file basically operates like a script that's run every time a user logs on.
 - Zsh (another popular shell) has an equivalent config file called `.zshrc`, so keep that in mind.
-- ==Put a reverse shell in the **.bashrc** of every user account. 
+- Put a reverse shell in the **.bashrc** of every user account. 
 
 ##### Malicious Services:
 ###### System V (Older Method):
 Create a backdoor script (a script with a reverse shell) in `/etc/init.d`. Make sure the script starts your backdoor in the **background** so your script isn't running in a visible terminal. 
-
-Make sure your script is executable. Use `chmod +x <backdoorname>` to make it executable if it isn't already.
 
 Ex: `/etc/init.d/syslogd-helper` (syslogd-helper is the name of our backdoor service.)
 
