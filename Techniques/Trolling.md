@@ -20,3 +20,5 @@ start C:\Windows\Resources\Ease of Access Themes\hc1.theme # Start the Windows h
 
 reg add "HKCU\Control Panel\Mouse" /v "MouseSpeed" /t REG_SZ /d "VALUE" /f # Modify mouse speed
 ```
+
+Persistence with [[Meterpreter]] affords many options like `webcam_chat`. 

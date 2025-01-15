@@ -3,7 +3,7 @@ Bash one-liner for host discovery
 for ip in {1..254}; do ping -c 1 -W 1 192.168.1.$ip &>/dev/null && echo "Host 192.168.1.$ip is up"; done
 ```
 
-Nmap for host discovery
+[[Nmap]] for host discovery
 ```shell
 nmap -sn -v -n <subnet in CIDR>
 ```
