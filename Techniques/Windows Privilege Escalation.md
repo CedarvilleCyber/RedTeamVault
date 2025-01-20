@@ -61,4 +61,4 @@ msiexec /quiet /qn /i C:\Windows\Temp\malicious.msi
 	- Comes in .exe and .bat formats, recommend .exe but signatured. 
 
 # For Later
-![[Pasted image 20240219123129.png]]
+![[Windows-Priv-Esc.png]]

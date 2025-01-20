@@ -25,7 +25,7 @@ RFI is even more problematic, because it can lead to immediate RCE. If a web ser
 PHP reverse shell and gain command execution on the web server.
 
 RFI example from THM Jr Pentester Path:
-![[Pasted image 20241016123430.png]]
+![[Remote-File-Inclusion.png]]
 
 Essentially, if a website allows us to choose files, we can trick it into sending a GET request to our machine or website. Then, the victim website will unwittingly execute our malicious file. 
 
