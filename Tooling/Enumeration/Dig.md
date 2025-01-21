@@ -12,3 +12,6 @@ Returns DNS records from a nameserver.
 - `dig axfr <TLD> @<nameserver FQDN/IP>` - DNS Zone Transfer
 
 A zone transfer dumps all the records for everything managed by the nameserver. 
+
+TLD = Top Level Domain. (Check glossary for other unknown acronyms)
+FQDN = Fully Qualified Domain Name
