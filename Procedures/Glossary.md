@@ -76,6 +76,7 @@ ICMP - Internet Control Message Protocol
 ID - IDentifier
 IDOR - Insecure Direct Object Reference
 IDS - Intrusion Detection System
+IPS - Intrusion Prevention System
 IL - Integrity Level
 IMAP - Internet Message Access Protocol
 IOC - Indicator Of Compromise
