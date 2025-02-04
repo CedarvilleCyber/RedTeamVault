@@ -4,3 +4,6 @@ This post is a comprehensive list of the easiest and best ways to upgrade your r
 https://blog.ropnop.com/upgrading-simple-shells-to-fully-interactive-ttys/
 
 I highly recommend trying out the easier ones, as they'll make post-exploitation easier.
+
+[[Nishang]]
+[[Python PTY Shells]]
