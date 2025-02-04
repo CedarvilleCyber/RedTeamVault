@@ -12,7 +12,9 @@ We want to find:
 - [[Smbclient]]
 - [[SMBMap]]
 - [[Enum4Linux]]
-- [[Nmap]] Scripts:
+- [[Nmap]] Scripts: 
+	To run all the vuln scripts at once, use this scan ***with caution:*** 
+	`sudo nmap -p139,445 -T4 --script smb-vuln* <ip-addr>`
 	- smb-enum-users.nse
 	- smb-enum-groups.nse
 	- smb-enum-shares.nse
