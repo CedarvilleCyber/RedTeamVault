@@ -32,3 +32,7 @@ reg add "HKCU\Control Panel\Mouse" /v "MouseSpeed" /t REG_SZ /d "VALUE" /f # Mod
 ```
 
 Persistence with [[Meterpreter]] affords many options like `webcam_chat`. 
+
+***DoS WITH GEESE***
+You can download and install the [Desktop Goose](https://samperson.itch.io/desktop-goose/download/eyJleHBpcmVzIjoxNzM5NDE2Mjg0LCJpZCI6NTU4MjE4fQ%3d%3d.RdlBCXbB6sF2fBp3tD9%2f19MhrZs%3d) on Windows and Mac. Running ten or more Desktop Geese may crash the adversary's computer.
+
