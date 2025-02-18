@@ -11,7 +11,13 @@ Default Creds Tool: https://github.com/ihebski/DefaultCreds-cheat-sheet
 [[LaZagne]]
 
 >[!note] Guessing, Spraying, Cracking, Stuffing
->Password Guessing is using the service as it is configured and trying many passwords for one user. Password Spraying is using the service as it is configured and trying many usernames for one password. Password Cracking is bruteforcing the password that corresponds with a given hash. Cracking takes place locally, whereas Guessing and Spraying require access to the network service being authenticated to. We would crack a zip file, and spray or guess against AD accounts. 
+>Password Guessing is using the service as it is configured and trying many passwords for one user. 
+>
+>Password Spraying is using the service as it is configured and trying many usernames for one password. 
+>
+>Password Cracking is bruteforcing the password that corresponds with a given hash. 
+>
+>Cracking takes place locally, whereas Guessing and Spraying require access to the network service being authenticated to. We would crack a zip file, and spray or guess against AD accounts. 
 >
 >Credential Stuffing is using username-password pairs in a guessing attack. This is highly effective if you have known username-password pairs, but would reduce effectiveness without an authoritative list of positively correlated username-password pairs. This should only be done after you know the passwords certain users are using.
 
@@ -43,7 +49,7 @@ We use password mutations to expand the capability of a small (or large) wordlis
 ## Windows Local Password Attacks
 
 The Windows Authentication Structure looks like this:
-![lsass Diagram](https://academy.hackthebox.com/storage/modules/147/lsassexe_diagram.png)
+![[lsassexe_diagram.webp]]
 
 |**Command**|**Description**|
 |---|---|

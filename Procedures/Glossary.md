@@ -85,6 +85,7 @@ ISR - Intelligence, Surveillance, Reconaissance
 
 ### J
 JSON - JavaScript Object Notation
+JWT - Javascript Web Token
 
 ### K
 KDC - Key Distribution Center

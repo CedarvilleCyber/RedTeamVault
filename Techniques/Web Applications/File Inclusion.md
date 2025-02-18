@@ -9,12 +9,15 @@ To test, use the `..` operator to maneuver through the filesystem and select the
 Methods exist of protecting against this attack that are also able to be bypassed. These include:
 - Appending a suffix to the string provided; `/etc/passwd` becomes `/etc/passwd.php`
 	- Defeated (before a current version of PHP) by appending `%00` to stop PHP processing the string before the suffix is reached. 
-- Filtering out `../` sequences.
+- Filtering out `../` sequences (non-recursively!).
 	- Defeated by building a string that works after the filter has been applied: `....//` -> `../`
 - Forcing the request to select from the current directory; `www/`
 	- Defeated by selecting from this directory first, and then traversing out; `www/../../../../../`
 - Blacklisting special files; `/etc/passwd` disallowed
 	- Defeated by path traversal again; `/etc/passwd` -> `/etc/passwd/.`
+We can also obtain files using PHP filters to base64 encode files that would otherwise be rendered by the web server. 
+`?lang=php://filter/read=convert.base64-encode/resource=config`
+
 Some other vulnerabilities also include:
 - Filtering only on one request type. For $\_REQUEST calls, the request can be made as either a GET or a POST, but one method may be filtered while the other is not.
 
