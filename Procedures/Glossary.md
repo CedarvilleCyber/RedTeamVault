@@ -196,6 +196,7 @@ VSFTPD - Very Secure FTP Daemon
 ### W
 WAF - Web Application Firewall
 WAN - Wide Area Network
+WMI - Windows Management Infrastructure
 WWW - World Wide Web
 
 ### X
