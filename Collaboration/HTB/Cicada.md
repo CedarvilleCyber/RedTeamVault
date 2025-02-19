@@ -31,5 +31,4 @@ Default password from the HR SMB share:
 >Cicada$M6Corpb*@Lp#nZp!8
 - Now we're trying to find the username.
 
-
-
+Use `impacket lookupsids` to find the username. 
