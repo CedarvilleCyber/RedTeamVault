@@ -18,10 +18,6 @@ Methods exist of protecting against this attack that are also able to be bypasse
 We can also obtain files using PHP filters to base64 encode files that would otherwise be rendered by the web server. 
 `?lang=php://filter/read=convert.base64-encode/resource=config`
 
-## RCE via LFI
-- PHP Wrappers
-
-
 Some other vulnerabilities also include:
 - Filtering only on one request type. For $\_REQUEST calls, the request can be made as either a GET or a POST, but one method may be filtered while the other is not.
 
