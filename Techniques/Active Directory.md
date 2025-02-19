@@ -72,6 +72,7 @@ net accounts
 - [[RPCclient]]
 - [[Enum4Linux]]
 - [[Kerbrute]]
+- [[Impacket]] (lookupsid)
 - LOL Solutions (like the AD module)
 
 # Password Spraying
