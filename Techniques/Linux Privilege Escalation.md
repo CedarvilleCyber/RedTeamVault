@@ -28,7 +28,7 @@ cat /etc/crontab
 ```
 
 # $PATH Hijacking
-- If a SUID program or a cronjob runs a binary with a relative path, it can be replaced by something earlier in the PATH, or the PATH can be manipulated by the user with an active shell session to subvert the assumed PATH of the binary. Additionally, if the $PATH is misconfigured for python imports or similar, you can craft a malicious python package to elevate your privileges as well. 
+- If a SUID program or a cronjob runs a binary with a relative path, it can be replaced by something earlier in the PATH, or the PATH can be manipulated by the user with an active shell session to subvert the assumed PATH of the binary.
 
 # NFS
 - Examine /etc/exports for NFS shares with the no_root_squash attribute. This allows another machine to remotely mount the share and create a SUID program with root permissions to set the uid and gid to spawn a root shell.

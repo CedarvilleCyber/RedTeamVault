@@ -10,7 +10,7 @@ See [[Burp Suite]] for manual injections with easier replayability.
 
 # UNION-Based
 
-After confirming an SQLi vulnerability exists, you may use the UNION keyword to return results from several select statements. 
+After confirming an SQLi exists, you may use the UNION keyword to return results from several select statements. 
 1. Confirm the number of columns. Add columns to your UNION statement until they match
 	- `UNION 1`
 	- `UNION 1,2`
@@ -23,7 +23,7 @@ After confirming an SQLi vulnerability exists, you may use the UNION keyword to 
 3. Get the data you want from the database
 	- `UNION 1,2,3,group_concat(username,':',password SEPARATOR '<br>') from <table name>`
 
-# Blind SQLi
+# BLIND SQLi
 
 ## Authentication Bypasses
 The cheat sheet above has a large list of auth bypasses for SQLi-vulnerable login forms. Select the correct one of these and proceed accordingly. 

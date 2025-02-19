@@ -1,5 +1,7 @@
 All acronyms found anywhere in this vault should be documented here in case confusion arises. 
 
+# A - M
+## A - G
 ### A
 ACE - Access Control Entry
 ACL - Access Control List
@@ -39,7 +41,6 @@ CSRF - Cross-Site Request Forgery
 DA - Domain Administrator
 DACL - Discretionary ACL
 DB - DataBase
-DBA - Database Administrator
 DBI - Dynamic Binary Instrumentation
 DC - Domain Controller; Domain Component
 DEP - Data Execution Prevention
@@ -63,6 +64,7 @@ GID - Group ID
 GUID - Globally Unique ID
 GPO - Group Policy Object
 
+## H - M
 ### H
 HTTP - HyperText Tranfer Protocol
 HTTPS - HTTP Secure
@@ -85,7 +87,6 @@ ISR - Intelligence, Surveillance, Reconaissance
 
 ### J
 JSON - JavaScript Object Notation
-JWT - Javascript Web Token
 
 ### K
 KDC - Key Distribution Center
@@ -110,6 +111,8 @@ MSF - MetaSploit Framework
 mTLS - Mutual TLS
 M$ - Microsoft
 
+# N - Z
+## N - T
 ### N
 NAC - Network Access Control
 NAT - Network Address Translation
@@ -183,6 +186,7 @@ TLD - Top Level Domain
 TLS - Transport Layer Security
 TOR - The Onion Routing protocol
 
+## U - Z
 ### U
 UDP - User Datagram Protocol
 UID - User ID

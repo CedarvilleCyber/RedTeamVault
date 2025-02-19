@@ -4,24 +4,17 @@ Tools:
 - [[Burp Suite]]
 # LFI
 To test, use the `..` operator to maneuver through the filesystem and select the information you are looking for. Ex: `?site=default&lang=../../../../../../../etc/passwd`. This example is for use in a URL, like in `www.example.com`. To try LFI, add the string above to the URL, like so:
-`www.example.com?site=default&lang=../../../../../../etc/passwd`. 
+`www.example.com?site=default&lang=../../../../../../etc/passwd`. ==Please DON'T try this on any actual website, including example.com, for obvious legal reasons.==
 
 Methods exist of protecting against this attack that are also able to be bypassed. These include:
 - Appending a suffix to the string provided; `/etc/passwd` becomes `/etc/passwd.php`
 	- Defeated (before a current version of PHP) by appending `%00` to stop PHP processing the string before the suffix is reached. 
-- Filtering out `../` sequences (non-recursively!).
+- Filtering out `../` sequences.
 	- Defeated by building a string that works after the filter has been applied: `....//` -> `../`
 - Forcing the request to select from the current directory; `www/`
 	- Defeated by selecting from this directory first, and then traversing out; `www/../../../../../`
 - Blacklisting special files; `/etc/passwd` disallowed
 	- Defeated by path traversal again; `/etc/passwd` -> `/etc/passwd/.`
-We can also obtain files using PHP filters to base64 encode files that would otherwise be rendered by the web server. 
-`?lang=php://filter/read=convert.base64-encode/resource=config`
-
-## RCE via LFI
-- PHP Wrappers
-
-
 Some other vulnerabilities also include:
 - Filtering only on one request type. For $\_REQUEST calls, the request can be made as either a GET or a POST, but one method may be filtered while the other is not.
 
