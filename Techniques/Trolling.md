@@ -13,15 +13,13 @@ make
 cd src
 ./nyancat > /dev/pts/<pts-num-of-opponent>
 
-dd if=nyan.mbr of=/dev/sda # NyanMBR necessary, overwrites Master Boot Recrd with Nyancat animation. The MBR image can be found in this repository: https://github.com/brainsmoke/nyanmbr
+dd if=nyan.mbr of=/dev/sda # NyanMBR necessary, overwrites Master Boot Record with Nyancat animation. The MBR image can be found in this repository: https://github.com/brainsmoke/nyanmbr
 
 echo exit >> ~/.bashrc # Add a logout to the login script
 
 cat /dev/urandom > /dev/pts/[pts-num-of-opponent] # Fill terminal with random noise spewing out at high speed.
 
 echo "echo "sleep 1;" >> ~/.bashrc">> ~/.bashrc # Add a longer sleep to their terminal startup every time they login. 
-
-cat /dev/random > /dev/[pts-num-of-opponent] # write random stuff to your opponent's terminal. The brackets are just to show you that the tty-num is a parameter
 
 telnet towel.blinkenlights.nl > /dev/[pts-num-of-opponent]
 ```
