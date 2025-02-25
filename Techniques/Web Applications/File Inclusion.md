@@ -4,7 +4,7 @@ Tools:
 - [[Burp Suite]]
 # LFI
 To test, use the `..` operator to maneuver through the filesystem and select the information you are looking for. Ex: `?site=default&lang=../../../../../../../etc/passwd`. This example is for use in a URL, like in `www.example.com`. To try LFI, add the string above to the URL, like so:
-`www.example.com?site=default&lang=../../../../../../etc/passwd`. ==Please DON'T try this on any actual website, including example.com, for obvious legal reasons.==
+`www.example.com?site=default&lang=../../../../../../etc/passwd`. 
 
 Methods exist of protecting against this attack that are also able to be bypassed. These include:
 - Appending a suffix to the string provided; `/etc/passwd` becomes `/etc/passwd.php`
