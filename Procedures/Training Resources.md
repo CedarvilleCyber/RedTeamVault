@@ -142,6 +142,7 @@ I don't know how credible this individual is, but she put together a giant list 
 - [ ] DevelPy https://tryhackme.com/room/bsidesgtdevelpy
 - [ ] Jack of all trades https://tryhackme.com/room/jackofalltrades
 - [ ] Bolt https://tryhackme.com/room/bolt
+- [ ] SQL Injection Lab https://tryhackme.com/room/sqlilab
 #### Level 5 - Reverse Engineering
 - [ ] Intro to x86 64 https://tryhackme.com/room/introtox8664
 - [ ] CC Ghidra https://tryhackme.com/room/ccghidra
