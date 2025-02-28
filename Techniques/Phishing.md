@@ -13,6 +13,9 @@ There are TONs of techniques for getting execution out of a phishing engagement.
 - A popular technique today is clipboard hijacking. Auto-copy a powershell script to the user's keyboard when they enter a website and instruct them to use Win+R, Ctrl+V, Enter to perform some critically important task. 
 
 # Phishing for Credentials
- I am not familiar with the relationship between [[EvilGINX]] and [[GoPhish]]. If they interoperate well and are capable of filtering and whitelisting bypasses, this could be a powerful combination for snagging invaluable AD credentials for use inside the network. 
+ I am not familiar with the relationship between [[EvilGINX]] and [[GoPhish]]. If they interoperate well and are capable of filtering and whitelisting bypasses, this could be a powerful combination for snagging invaluable AD credentials for use inside the network. UPDATE: They do! kgretzky distributes a version of [[GoPhish]] configured to work with [[EvilGINX]] seamlessly. You still need a good pretense, but there are lots of those...
 
 It is possible to perfectly clone and catch credentials passing through a copy of a popular login form. Perhaps LinkedIn or an SSO that the company uses. M$ is a safe bet. This can be further abused to forward the credentials to the service and send the user down the trail without ever being the wiser that their credentials were stolen. [[EvilGINX]] is useful for this purpose, as well as just using [[cURL]] to clone websites.  
+
+>[!tip] 
+>If your target utilizes MFA, not a problem. Simply capture their session cookie with [[EvilGINX]] on a successful login. For most places, that will get you access. However, Cedarville's network in particular appears to be a good example of how to prevent this, with VERY quick inactivity timeouts. 

@@ -31,6 +31,7 @@ CN - Common Name
 COMSEC - COMmunications SECurity
 CPTC - Collegiate Penetration Testing Competition
 CSRF - Cross-Site Request Forgery
+CWD - Current WOrking Directory
 
 DA - Domain Administrator
 DACL - Discretionary ACL
@@ -133,6 +134,7 @@ RID - Relative IDentifier
 RSA - Rivest, Shamir, Adleman
 
 SACL - System ACL
+SAM - Security Accounts Manager
 SE - Social Engineering
 SFTP - Secure FTP
 SID - Security ID
