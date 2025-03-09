@@ -2,7 +2,9 @@ SQL Injection is a common vulnerability even in modern systems.
 
 The mother of all resources on this attack can be found here: https://github.com/swisskyrepo/PayloadsAllTheThings/tree/master/SQL%20Injection
 
-I will not be able to top this resource nor effectively summarize all the valid SQLi payloads. Refer to this manual instead,
+I will not be able to top this resource nor effectively summarize all the valid SQLi payloads. Refer to this manual instead.
+
+This site has additional resources, including a SQLi backdoor technique: [SQL Injection & XSS Playground | Red Team Notes](https://www.ired.team/offensive-security-experiments/offensive-security-cheetsheets/sql-injection-xss-playground)
 
 See [[Sqlmap]] for command details and cheatsheet. 
 See [[Wafwoof]] for WAF detection and PayloadsAllTheThings for WAF bypasses. 
