@@ -114,6 +114,8 @@ I don't know how credible this individual is, but she put together a giant list 
 - [ ] Metasploit 
 - [ ] Hydra https://tryhackme.com/room/hydra
 - [ ] Linux Privesc https://tryhackme.com/room/linuxprivesc
+- [ ] ffuf https://tryhackme.com/room/ffuf
+	- This is the best directory buster/web scanner I know of.
 
 **More introductory CTFs**
 - [ ] Vulnversity - https://tryhackme.com/room/vulnversity
