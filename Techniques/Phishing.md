@@ -19,3 +19,11 @@ It is possible to perfectly clone and catch credentials passing through a copy o
 
 >[!tip] 
 >If your target utilizes MFA, not a problem. Simply capture their session cookie with [[EvilGINX]] on a successful login. For most places, that will get you access. However, Cedarville's network in particular appears to be a good example of how to prevent this, with VERY quick inactivity timeouts. 
+
+# Pretext
+Utilize standard social engineering tactics to get your target to follow links and make other poor decisions. 
+- Urgency
+- Authority
+- Necessity
+- Appeal to Kindness
+Use these effectively and realistically. You should be phishing as a coworker or superior. Use what information is available from the domain to get information like employee hierarchy, etc. Another good input for this information is OSINT. For competitions, there is information seeded for you to find, and it will likely be looked for in the text of the email itself. 
