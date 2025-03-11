@@ -7,3 +7,5 @@ DNSDumpster is a tool that enumerates subdomains for you. This broadens the atta
 DNSrecon
 
 ![[OSINT.png]]
+
+Also useful is the [[OSINT Framework]] for finding tooling to fit your needs. OSINT is a volatile science. Get your tooling as up-to-date and as shiny as possible. 
