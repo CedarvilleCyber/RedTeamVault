@@ -114,6 +114,8 @@ I don't know how credible this individual is, but she put together a giant list 
 - [ ] Metasploit 
 - [ ] Hydra https://tryhackme.com/room/hydra
 - [ ] Linux Privesc https://tryhackme.com/room/linuxprivesc
+- [ ] ffuf https://tryhackme.com/room/ffuf
+	- This is the best directory buster/web scanner I know of.
 
 **More introductory CTFs**
 - [ ] Vulnversity - https://tryhackme.com/room/vulnversity
@@ -186,6 +188,21 @@ I don't know how credible this individual is, but she put together a giant list 
 - Active Directory Penetration Tester Job Role Path
 ## HTB Machines
 https://docs.google.com/spreadsheets/u/1/d/1dwSMIAPIam0PuRBkCiDI88pU3yzrqqHkDtBngUHNCw8/htmlview
+# Web Security Academy
+This is a free training resource for web application exploitation. It's provided by PortSwigger, the company that created Burp Suite. 
+
+I recommend checking out their [learning paths.](https://portswigger.net/web-security/learning-paths) PortSwigger recommends these four:
+- SQL Injection (SQLi)
+- Authentication
+- Cross-Site Scripting (XSS)
+- Business Logic Vulnerabilities
+
+I think these paths would be very helpful as well:
+- Server-side vulnerabilities 
+	- This is an "apprentice" level path, meaning it's more accessible than the others.
+- NoSQL Injection
+- Cross-Site Request Forgery
+
 # Miscellaneous
 Open-Source Red Team Toolkit:
 - https://github.com/infosecn1nja/Red-Teaming-Toolkit?tab=readme-ov-file#Payload%20Development
