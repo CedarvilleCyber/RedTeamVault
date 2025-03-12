@@ -14,6 +14,7 @@ Web Application Exploitation is an entire specialization of penetration testing.
 [[HTML Injection]]
 [[Command Injection]]
 [[Broken Authentication]]
+[[Verb Tampering]]
 
 Refer also to [[OWASP Top 10]] for reference.
 
