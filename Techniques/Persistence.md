@@ -109,10 +109,10 @@ This is the link to the GitHub page: https://github.com/sajith/mod-rootme
 
 ## Domain Persistence
 ### Credentials
-You can acquire hashes of users using [[Mimikatz]]'s DCSync functionality for every user. This will grant access to the krbtgt account for golden tickets, etc. 
+You can acquire hashes of users using [[Mimikatz]]'s DCSync functionality for every user. This will grant access to the krbtgt account for golden tickets, etc. DA hashes can be used to authenticate anywhere in the domain, or to create new users in the domain. 
 
 ### Tickets
-Golden and Silver Tickets are incredibly useful, and will grant persistence as well. The are generated most easily with [[Rubeus]] and [[Mimikatz]]. 
+Golden and Silver Tickets are incredibly useful, and will grant persistence as well. The are generated most easily with [[Rubeus]] and [[Mimikatz]]. Golden tickets are hard to get rid of for the blue team, so avoid them if possible, or set them to be short-lived. Silver tickets are more appropriate, but more limited. Additionally, you should set these to be short-lived, as retracting these is nearly impossible. 
 
 ### Certificates
 
