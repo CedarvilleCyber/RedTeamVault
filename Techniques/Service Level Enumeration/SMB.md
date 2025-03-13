@@ -11,6 +11,7 @@ We want to find:
 
 - [[Smbclient]]
 - [[SMBMap]]
+- [[CrackMapExec]]
 - [[Enum4Linux]]
 - [[Nmap]] Scripts: 
 	To run all the vuln scripts at once, use this scan ***with caution:*** 

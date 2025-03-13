@@ -40,7 +40,6 @@
 	- [[Password Attacks|Password Attacks]]
 - Client-Side Attacks/Social Engineering Attacks
 	- [[BEEF]]
-	- Maldocs
 	- [[Phishing]]
 - Web Applications
 	- [[Web Applications/Start|Web Application Exploitation]]

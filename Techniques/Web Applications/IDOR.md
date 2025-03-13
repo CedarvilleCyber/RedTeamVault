@@ -3,6 +3,7 @@ IDOR: Insecure Direct Object Reference. It's a type of access control vulnerabil
 Tools:
 - [[Burp Suite]]
 - [[ZAProxy]]
+- [[Ffuf]]
 
 This vulnerability occurs when a parameter is passed to the web server that is not checked once returned, and this parameter controls which of a list of options is returned to the user. 
 
