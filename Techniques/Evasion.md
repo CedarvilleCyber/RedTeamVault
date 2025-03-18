@@ -13,7 +13,7 @@ AV/EDR Evasion is an arms race that is mostly beyond the scope of CPTC. However,
 - Encoding
 	- Encoding a payload is unlikely to defeat a scanner worth its salt. 
 - Encrypting
-	- Encryption is a much more reliable technique, but MSFVenom is well signatured no matter what you do with it. ScareCrow is a better option here
+	- Encryption is a much more reliable technique, but MSFVenom is well signatured no matter what you do with it. [[ScareCrow]] is a better option here, or [[Pestilence]]. 
 - Staging payloads
 - Waiting
 	- Sometimes, waiting 5 minutes before sending a command can allow an in-memory scanner to move on from examining your malicious payload before it actually executes any malicious commands. This is sometimes the case with Defender as the HTH team can attest to.
