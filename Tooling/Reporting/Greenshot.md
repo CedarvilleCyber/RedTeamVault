@@ -1,3 +1,3 @@
-Awesome Screenshot and screenshot markup tool. Use for reporting. 
+Awesome Screenshot and screenshot markup tool. Use for reporting. All but superceded by Windows' Snipping Tool... 
 
 https://getgreenshot.org/
