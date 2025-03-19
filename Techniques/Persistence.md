@@ -5,6 +5,8 @@ The C2 implant of choice for CU at the time of writing is [[Sliver C2]]. You can
 
 [[MSFVenom]] also contains functionality for binding malware to legitimate executables. However, this must be done in conjunction with [[Evasion]] as all MSFVenom payloads and TTPs are well signatured. 
 
+> [!danger] Persistence post-reboot requires living on the disk. This should be noted and accounted for during engagements with installed AV/EDR
+
 ## Persistence via LOL (Living off the Land)
 ### Linux
 - Malicious user acct
@@ -20,6 +22,8 @@ These are all the places you can hide cron jobs:
 - `/etc/cron.daily/`
 - `/etc/cron.weekly/`
 - `/etc/cron.monthly/`
+##### Systemd Timers
+Systemd timers function basically identically to crontabs, but require a specific syntax to be read properly by systemd. This syntax is not difficult, but the timers can be easily viewed when searching for persistence. 
 ##### SSH Keys:
 - If you don't have an SSH key, generate one with `ssh-keygen`. 
 - Add your public key to the `~/.ssh/authorized_keys` file in every user's directory. Create the file if it isn't already present, then add a new line in the file and put your public key there.
@@ -45,6 +49,13 @@ Ex: `sudo ln -s /etc/init.d/syslogd-helper /etc/rc3.d/S99syslogd-helper`
 
 ###### systemd (Newer Method):
 
+##### Binding to known good executables
+>[!danger] This will not hold up to AV 
+
+Use [[MSFVenom]] to bind a payload to a frequently-used binary to maintain your persistence. 
+ 
+>[!warning] Maintain a clean copy of the binary to assist in cleanup
+
 ### Windows
 - Registry Run Keys
 - Scheduled Tasks
@@ -56,8 +67,8 @@ Ex: `sudo ln -s /etc/init.d/syslogd-helper /etc/rc3.d/S99syslogd-helper`
 			- Backup Operators && Remote Management Users member can export HKLM\\system and HKLM\\sam to PTH with [[Evil-WinRM]]. This can also be accomplished by editing config.inf with [[secedit]] directly and adding the user to privileged groups and assigning privileges to the user directly via the GUI. This prevents the new groups from appearing in a user summary. TODO: Finish this with more details
 - DLL Hijacking
 - Poisoning Shortcuts
-- Backdoor Applications
-	- [[MSFVenom]] has functionality for this, but it is not very sturdy
+- Binding
+	- [[MSFVenom]], same warnings apply.
 - Replace Default Applications for File types
 	- HKEY_CLASSES_ROOT???
 - Malicious Services
