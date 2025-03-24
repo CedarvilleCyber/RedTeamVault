@@ -7,7 +7,7 @@ If we have access to files we have uploaded (like a profile picture), we may be 
 - Magic Bytes
 	- Replacing the beginning bytes of the PHP file with an image file file signature will defeat this basic check. ex: `GIF8 <?php system(...` The easiest way to do this is to upload a small image file and replace all but the magic bytes. This ensures that they are copied correctly, because some of the bytes used do not always have clean copy-and-paste values. 
 
->[!tip] SVG images can also be used to provide LFI and potentially command injections (via XXE) or XSS if they are displayed unmodified in the webpage.
+>[!tip] SVG images can also be used to provide LFI and potentially command injections (via [[XXE]]) or [[XSS]] if they are displayed unmodified in the webpage.
 >
 
 ```xml

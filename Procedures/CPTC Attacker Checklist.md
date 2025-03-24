@@ -68,6 +68,6 @@ Utilize available techniques to stay hidden on the endpoint and penetrate deeper
 - Reports should be professional. As in largely white and in printable formats. None of this denim colored reporting anymore. That was embarrassing. 
 - Template should be prepared beforehand. 
 	- Only access in-env will be to MS Word.
-	- Templates should be on the GitHub
+	- Templates should be on the GitHub LONG before the day of. 
 
 [[Additional Valuable Resources]]
