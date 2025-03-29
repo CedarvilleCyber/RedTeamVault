@@ -11,6 +11,8 @@ There are TONs of techniques for getting execution out of a phishing engagement.
 - Esoteric archive files (vmdk, other compressions) not extensively indexed in antivirus systems. Password-protected ZIPs are also a good bet, but the password has to be good to avoid mail's built-in virus scans. 
 - Executables are usually super suspect. [[Evasion]] could help bypass basic host-based AVs but getting a user to run it could be difficult. Using a RTL override UTF-8 character to disguise filenames could also be useful. Ann\<RTL\>cod.exe -> Annexe.doc. Replacing an icon could also be useful in this situation. The primary use for this character is languages written from right to left like Arabic or Hebrew, but it can be abused here. 
 - A popular technique today is clipboard hijacking. Auto-copy a powershell script to the user's keyboard when they enter a website and instruct them to use Win+R, Ctrl+V, Enter to perform some critically important task. 
+- Polyglot files are another possible avenue. (need more information)
+- Shortcut files can be used to run raw powershell, or to link users to new websites, etc. 
 
 # Phishing for Credentials
  I am not familiar with the relationship between [[EvilGINX]] and [[GoPhish]]. If they interoperate well and are capable of filtering and whitelisting bypasses, this could be a powerful combination for snagging invaluable AD credentials for use inside the network. UPDATE: They do! kgretzky distributes a version of [[GoPhish]] configured to work with [[EvilGINX]] seamlessly. You still need a good pretense, but there are lots of those...
@@ -27,3 +29,17 @@ Utilize standard social engineering tactics to get your target to follow links a
 - Necessity
 - Appeal to Kindness
 Use these effectively and realistically. You should be phishing as a coworker or superior. Use what information is available from the domain to get information like employee hierarchy, etc. Another good input for this information is OSINT. For competitions, there is information seeded for you to find, and it will likely be looked for in the text of the email itself. 
+
+# Infrastructure
+Your sending server has to satisfy many qualifications to be seen as legitimate by the receiving mail server to avoid it being filtered out by spam filters. 
+
+## SPF
+TODO: Write this
+
+## DKIM
+TODO: Write this
+
+## Spoofed Headers
+TODO: Write this
+
+You should consider setting up your own Postfix server for sending with granular control over your email payloads. 
