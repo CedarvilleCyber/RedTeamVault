@@ -37,7 +37,7 @@
 	- [[Metasploit]]
 	- [[Exploit-DB]]
 	- GitHub
-	- [[Password Attacks|Password Attacks]]
+	- [[Cyber/RedTeamVault/Techniques/Password Attacks|Password Attacks]]
 - Client-Side Attacks/Social Engineering Attacks
 	- [[BEEF]]
 	- [[Phishing]]
