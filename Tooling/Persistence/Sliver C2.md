@@ -13,7 +13,7 @@ The server functions as a fully featured point of interaction, and it is not req
 Multiplayer mode allows other users (players) to connect to the C2 via mTLS and operate implants simultaneously with the host. For multi-person engagements, this is preferable, and easy to set up. 
 
 ```shell
-new-operator --name <operator short name> --lhost <C2 server IP>
+new-operator --name <operator short name> --lhost <C2 server IP> -p all
 ```
 
 >[!note] The C2 server IP must be accessible as described by the operator machine. Do not provide a local IP address. Domain names may or may not be permissible. Update when we know.

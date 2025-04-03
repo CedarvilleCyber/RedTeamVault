@@ -10,7 +10,5 @@
 - PASSWD_NOTREQD
 	- [[PowerView]]
 - Group Policy Preferences Passwords
-- ASREP Roasting
-	- [[Rubeus]]
 - GPO Abuse
 TODO: Write this
