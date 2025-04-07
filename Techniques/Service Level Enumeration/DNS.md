@@ -18,6 +18,7 @@ We are looking for
 Subdomain bruteforcers 
 - [[DNSEnum]] 
 - [[SubBrute]] 
+- [[DNSScan]]
 
 # DNS Checklist
 - Enumerate information with dig. 

@@ -5,6 +5,9 @@ Phishing is an important part of CPTC and penetraiton testing as a whole. While 
 >
 >For this assignment, you are usually required to send an exe, xls or doc file. This can be prepared beforehand and quickly modified. Further, you should investigate other teams' GitHubs for good examples. Try and sneak stuff from successful teams though...
 
+# Enumeration
+You can use [[Spoofy]] to determine if a mail server is vulnerable to email spoofing, which could be valuable for our purposes. 
+
 # Phishing for Initial Access
 There are TONs of techniques for getting execution out of a phishing engagement. Some notable ones used in the wild include
 - Macros! Word Documents, Spreadsheets, and MANY other M$ products support executing code via WScript or similar. Use this to your advantage. Sans AV intervention you can use this on its own to execute shellcode beacons via [[MSFVenom]] implants. However, newer versions of these products make them very difficult to deploy successfully. Evading these protections may or may not be in scope for CPTC, but be mindful of how difficult these will be to use in the real world. 

@@ -24,6 +24,13 @@ From Windows is even easier.
 net accounts
 ```
 
+# Password Spraying
+Many different toolsets can be used for this. It is covered in more detail here: [[Cyber/RedTeamVault/Techniques/Password Attacks|Password Attacks]]
+- [[MailSniper]]
+- [[SprayingToolkit]]
+- [[CrackMapExec]]
+- [[Hydra]]
+
 # Credential Injection
 ## Runas
 ```powershell

@@ -75,11 +75,14 @@ systemctl enable backdoor
 - Scheduled Tasks
 	- Can delete attribute SD from task at HKLM\\SOFTWARE\\Microsoft\\Windows NT\\CurrentVersion\\Schedule\\Tree\\\<TASK\> to hide the running task from `schtasks`.
 - Startup Folder
+	- [[SharPersist]]
 - Malicious user acct
 	- Administrator User
 		- If NOT:
 			- Backup Operators && Remote Management Users member can export HKLM\\system and HKLM\\sam to PTH with [[Evil-WinRM]]. This can also be accomplished by editing config.inf with [[secedit]] directly and adding the user to privileged groups and assigning privileges to the user directly via the GUI. This prevents the new groups from appearing in a user summary. TODO: Finish this with more details
 - DLL Hijacking
+- COM Hijacking
+	- Look for COM objects loaded semi-frequently, and not many times a second, or you will wind up with more beacons than bandwidth. [[Process Monitor]] from Sysinternals will be useful for this. Hunt especially for COM objects that do not exist rather than replacing critical parts of the operating system. 
 - Poisoning Shortcuts
 - Binding
 	- [[MSFVenom]], same warnings apply.

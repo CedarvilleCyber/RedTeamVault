@@ -7,6 +7,10 @@
 - [[Impacket]]
 - LOL Solutions (like the AD module)
 
+We can also use a timing attack against Exchange servers without credentials. 
+- [[Invoke-UsernameHarvestOWA]]
+
+
 # Enumerating Security Controls
 
 This Powershell will give lots of valuable information about the domain and your privileges within it. 
