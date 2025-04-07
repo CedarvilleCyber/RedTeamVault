@@ -9,7 +9,7 @@ We can use GetUserSPNs from Impacket to get a TGT to crack with hashcat's mode 1
 # AS-REP Roasting
 - [[Impacket]]
 - [[Rubeus]]
-TODO: Write this
+AS-REP Roasting is possible if Kerberos pre-authentication is not enforced on user accounts. This is most likely enabled on Linux servers hosting services where Kerberos is not the ideal authentication solution, and disabling pre-auth greases the wheels significantly. 
 
 # NetNTLMv2 Relay Attack
 Impossible with SMB and LDAP signing enabled. Allows MITMing of NetNTLMv2 authentication. 

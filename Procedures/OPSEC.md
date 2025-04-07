@@ -10,6 +10,8 @@ Account lockout policies need to be balanced with time on engagement. This is th
 Deviations from the standard operational capacity of the environment will alter the experience for users of the environment. To the extent that it is possible, if you clean up after yourself, you can remain under the radar more effectively. Further, this will help during blue team's cleanup of the environment post-engagement.
 5. Open handles to suspicious locations
 Opening read handles to sensitive processes or locations on disk like LSASS, the SAM and SECURITY hives, or to DCSync your DCs will generate unique logs from the environment. Avoid if at all possible. 
+6. Critical Indiscrimination
+Defenders utilize honeypots in more ways than one. A good example is honey SPNs in Windows AD. Running Rubeus against all SPNs without selecting them carefully will generate alerts when services that are not meant to be touched are touched, and the blue team will be alerted to your presence immediately. Use accounts and services carefully. 
 
 # Cobalt Strike
 1. The default DNS record for CS is well signatured and will cause problems with NIDS. Be sure to modify it. 

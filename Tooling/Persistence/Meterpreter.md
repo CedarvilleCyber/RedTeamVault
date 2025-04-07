@@ -14,7 +14,7 @@ screenshot # Check the desktop for useful information
 migrate # Move your session into another binary's memory space. Useful for persistence, especially if you manage to migrate into system-critical processes, and potentially for privilege escalation.
 ```
 
-Meterpreter's kiwi module includes lots of the same functionality as [[Mimikatz]] but targeted specifically at local SAM databases and Kerberos. Most of the domain-crossing and havoc-wreaking functionality is not in place. For a more full-featured impementation, use [[Sliver C2]] or upload the binary to the target machine and use it manually. 
+Meterpreter's kiwi module includes lots of the same functionality as [[Mimikatz]] but targeted specifically at local SAM databases and Kerberos. Most of the domain-crossing and havoc-wreaking functionality is not in place. For a more full-featured impementation, use [[Sliver]] or upload the binary to the target machine and use it manually. 
 
 There are also some joke commands like video chatting with the victim, playing audio recordings over the speakers, and more. 
 

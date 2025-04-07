@@ -64,6 +64,8 @@ msiexec /quiet /qn /i C:\Windows\Temp\malicious.msi
 - [[PEASS|WinPEAS]]
 	- Quick and easy check for many misconfigurations
 	- Comes in .exe and .bat formats, recommend .exe but signatured. 
+- Tokens and Impersonation
+	- [[Sliver]] and [[Cobalt Strike]] (maybe [[Meterpreter]] as well?) both contain built-in functions for creating and stealing tokens for logged-in users. These tokens retain the user's privileges and context for as long as the user is logged in. 
 
 # For Later
 ![[Windows-Priv-Esc.png]]
