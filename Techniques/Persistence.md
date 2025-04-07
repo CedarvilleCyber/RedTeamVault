@@ -90,6 +90,9 @@ systemctl enable backdoor
 	- HKEY_CLASSES_ROOT???
 - Malicious Services
 	- Replace the binPath property of an existing Windows service with your implant to avoid creating a new service. Simple commands can also be used as binPath, meaning `net user redteam password /add` is permissible. If you plan to use an implant as a service make sure to compile as `exe-service` with [[MSFVenom]].
+- WMI Event Subscriptions
+	- Requires SYSTEM level access to the target machine.
+	- [[PowerLurk]]
 
 ### Web Servers
 

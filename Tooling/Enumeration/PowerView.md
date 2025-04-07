@@ -1,4 +1,4 @@
-PowerView is a powerful suite of PowerShell tools for Active Directory enumeration and compromise.
+PowerView is a powerful suite of PowerShell tools for Active Directory enumeration and compromise. It has a C# fork called SharpView that behaves identically, can be executed as assembly, but cannot be piped as easily. 
 
 | **Command**                         | **Description**                                                                            |
 | ----------------------------------- | ------------------------------------------------------------------------------------------ |

@@ -8,6 +8,8 @@ The number of times a beacon checks in during a given time period is directly pr
 Account lockout policies need to be balanced with time on engagement. This is the trickiest part to keep quiet, especially while enumerating users or spraying passwords, but it is necessary. 
 4. Restore as much as you can as often as you can. 
 Deviations from the standard operational capacity of the environment will alter the experience for users of the environment. To the extent that it is possible, if you clean up after yourself, you can remain under the radar more effectively. Further, this will help during blue team's cleanup of the environment post-engagement.
+5. Open handles to suspicious locations
+Opening read handles to sensitive processes or locations on disk like LSASS, the SAM and SECURITY hives, or to DCSync your DCs will generate unique logs from the environment. Avoid if at all possible. 
 
 # Cobalt Strike
 1. The default DNS record for CS is well signatured and will cause problems with NIDS. Be sure to modify it. 
