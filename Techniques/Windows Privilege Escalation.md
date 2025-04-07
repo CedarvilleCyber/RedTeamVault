@@ -3,6 +3,7 @@
 [[WES-NG]]
 [[PEASS|WinPEAS]]
 [[PowerUp.ps1]]
+[[SharpUp]]
 [[PrivescCheck]]
 [[Seatbelt]]
 
@@ -42,8 +43,12 @@ schtasks /query /tn <taskname> /fo list /v # use icacls for file permissions
 	- SeTakeOwnership
 	- SeBackup/SeRestore
 - Check for Unquoted Service Paths
-	- Must be running as system for full access, or insecure service perms
+	- Must be running as system for full access, or insecure service perms. 
+```powershell
+wmic service get name, pathname
+```
 - Check for Insecure Service Permissions
+	- Be sure not to introduce Unquoted Service Paths while establishing persistence. 
 - Check for Insecure Service Executables
 - Check for Weak Registry Permissions on Services
 - Check for Weak Permissions on Autorun Executables
