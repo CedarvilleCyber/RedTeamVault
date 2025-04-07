@@ -5,6 +5,7 @@
 - [[Enum4Linux]]
 - [[Kerbrute]]
 - [[Impacket]]
+- [[ADSearch]]
 - LOL Solutions (like the AD module)
 
 We can also use a timing attack against Exchange servers without credentials. 
