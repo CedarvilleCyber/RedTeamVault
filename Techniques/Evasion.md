@@ -79,6 +79,8 @@ reg add "HKCU\Software\Classes\ms-settings\CurVer" /d ".ccu" /f
 
 An automated solution to UAC bypasses can be found here: https://github.com/hfiref0x/UACME
 
+Another solution built for [[Cobalt Strike]] can be found here: https://github.com/Cobalt-Strike/ElevateKit/tree/master/modules
+
 # Maldocs
 Maldocs refers to malicious documents created in Office or other applications capable of running code from macros. 
 
