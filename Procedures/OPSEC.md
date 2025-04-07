@@ -16,4 +16,4 @@ Defenders utilize honeypots in more ways than one. A good example is honey SPNs 
 # Cobalt Strike
 1. The default DNS record for CS is well signatured and will cause problems with NIDS. Be sure to modify it. 
 2. The default SMB named pipe is well signatured. This will need to be changed in your Malleable C2 config. 
-3. 
+3. Be careful adding port forwards to your machines, as creating a new one that is not yet allowed by the WIndows Firewall will generate a visible alert to the user, and will create an explicit block rule if denied. Always add firewall rules first. 

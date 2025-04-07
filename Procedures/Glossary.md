@@ -22,6 +22,7 @@ BMC - Baseboard Management Controller
 BOF - Buffer OverFlow; Beacon Object File
 BSD - Berkely Software Distribution
 
+CA - Certificate Authority
 CARP - Common Address Redundancy Protocol
 C2 - Command and Control
 CCDC - Collegiate Cyber Defense Competition
@@ -31,7 +32,7 @@ CN - Common Name
 COMSEC - COMmunications SECurity
 CPTC - Collegiate Penetration Testing Competition
 CSRF - Cross-Site Request Forgery
-CWD - Current WOrking Directory
+CWD - Current Working Directory
 
 DA - Domain Administrator
 DACL - Discretionary ACL
@@ -116,6 +117,7 @@ PAC - Privilege Attribute Certificate
 PE - Portable Executable
 PGP - Pretty Good Privacy
 PID - Process ID
+PKINIT - Public Key cryptography for INITial authentication
 PLC - Programmable Logic Controller
 POP3 - Post Office Protocol 3
 PS - PowerShell

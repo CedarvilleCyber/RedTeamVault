@@ -20,6 +20,7 @@ Tools:
 - [[Chisel]]
 - [[Ligolo]]
 - [[Plink]]
+- [[Proxifier]]
 
 [[Proxychains]] will be the most central tool for you here. Every one of these commands will create a proxy through which your connection needs to be routed. Sometimes it is accomplished for you, and other times you have to add a proxy via proxychains. A good advertisement for knowing which tools do what. 
 
@@ -37,3 +38,6 @@ TODO: Fill in
 
 ## SSH Port Forwards
 - Ye Old Faithful. Plink.exe contains all this functionality in Windows so if you upload it you can pivot with it with maximum overlap with Linux. 
+
+## NTLM Relays
+- You can use [[WinDivert]] to remap port traffic to allow it to be proxied outside of the environment. 
