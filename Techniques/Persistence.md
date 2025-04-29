@@ -122,6 +122,10 @@ For more information on webshells, see `/usr/share/webshells/php` on your Kali m
 This is the link to the GitHub page: https://github.com/sajith/mod-rootme
 
 
+## Miscellaneous Backdoors
+This one uses ICMP, which is handy because it doesn't rely on TCP or UDP.
+- https://github.com/andreafabrizi/prism
+
 ## Domain Persistence
 ### Credentials
 You can acquire hashes of users using [[Mimikatz]]'s DCSync functionality for every user. This will grant access to the krbtgt account for golden tickets, etc. 

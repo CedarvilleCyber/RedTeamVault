@@ -62,28 +62,6 @@ The entire module is paywalled except for the SQL injection room at the very end
 ##### Privilege Escalation
 - [What the Shell?](https://tryhackme.com/room/introtoshells)
 - [Windows Privilege Escalation](https://tryhackme.com/room/windowsprivesc20)
-#### Junior Penetration Tester path timeline: (overestimates built in)
-
-Intro to Cyber Security module: 25 + 25 + 30 (hour and a half)
-
-Intro to Pentesting module: 30 + 30 (an hour)
-
-Intro to Web Hacking: 35 + 30 + 30 + 30 + 30 + 60 + 30 + 30 + 20 + 30 (6 hours)
-
-Burp Suite: 60 + 60 + 90 + 45 + 30 (5 and a half hours)
-
-Network Security: 60 + 60 + 120 + 120 + 75 + 60 + 100 + 100 + 60 (13 hours)
-
-Vulnerability Research: 20 + 20 + 20 (an hour)
-
-Metasploit: 30 + 20 + 20 (an hour and a half)
-
-Privilege Escalation: 60 + 50 + 60 (three and a half hours)
-
-About 34 hours total, excluding the Intro to Cyber Security module. 
-
-Pacing: just over two hours a week for a semester, which is about 20 minutes a day. Do half an hour a day to give yourself time to study during exam weeks.
-
 ### Red Teaming
 ### Web Application Pentesting
 ### Offensive Pentesting
