@@ -11,7 +11,6 @@ That being said, you should consider specializing in a specific area of pentesti
 - Junior Pentesting
 - Web Application Pentesting
 - Red Teaming
-
 ### HackTheBox Academy:
 - Penetration Tester Job Role Path
 ### Seed Labs:
