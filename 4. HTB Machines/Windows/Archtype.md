@@ -65,7 +65,7 @@ Tried these commands:
 SELECT SYSTEM_USER;
 EXEC xp_cmdshell 'whoami';
 "
-But xp_cmdshell is not enabled. ==But we can enable xp cmdshell because we are domain admin!==
+But xp_cmdshell is not enabled. ==But we can enable xp cmdshell because we have privs!==
 
 ==Listing privileges==
 ![[Pasted image 20250518181401.png]]
