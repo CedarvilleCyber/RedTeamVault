@@ -7,3 +7,10 @@ DNSDumpster is a tool that enumerates subdomains for you. This broadens the atta
 DNSrecon
 
 ![[OSINT.png]]
+
+**BGP-Toolkit**: Just punch in a domain or IP address, and the toolkit will search for any results it can.
+![[Pasted image 20250527230205.png]]
+
+**Viewdns.info**: Another useful DNS tool
+![[Pasted image 20250527230635.png]]
+

