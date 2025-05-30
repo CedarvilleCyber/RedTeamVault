@@ -1,3 +1,5 @@
+==AD Methodology: [Hacktricks](https://book.hacktricks.wiki/en/windows-hardening/active-directory-methodology/index.html)
+
 # What is AD?
 AD is an identity/security policy management framework for managing large fleets of Windows computers. Windows comes with support for it out of the box. These techniques are grouped together into one note because they are less applicable outside of a domain context. While most organizations to make use of AD DS, it is not always in use. Use this note if and when necessary, and understand it well. 
 

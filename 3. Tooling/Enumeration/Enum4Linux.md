@@ -15,3 +15,9 @@ Linux-based SMB enumeration tool. It doesn't enumerate Linux only! It just only 
 | `enum4linux -i target-ip`                                | Pull information about printers known to the remote device.                                                           |
 | `enum4linux -P target-ip`                                | Get password policy for a host or domain.                                                                             |
 Install with apt on Kali. Should come preinstalled.
+
+
+
+|     |     |
+| --- | --- |
+|     |     |
