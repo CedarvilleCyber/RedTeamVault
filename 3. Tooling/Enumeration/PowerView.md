@@ -1,3 +1,5 @@
+==Powerview/SharpView== [Hacktricks](https://book.hacktricks.wiki/en/windows-hardening/basic-powershell-for-pentesters/powerview.html?highlight=powerview#powerviewsharpview)
+
 PowerView is a powerful suite of PowerShell tools for Active Directory enumeration and compromise.
 
 | **Command**                         | **Description**                                                                            |

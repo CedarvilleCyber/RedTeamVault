@@ -16,8 +16,6 @@ Linux-based SMB enumeration tool. It doesn't enumerate Linux only! It just only 
 | `enum4linux -P target-ip`                                | Get password policy for a host or domain.                                                                             |
 Install with apt on Kali. Should come preinstalled.
 
-
-
-|     |     |
-| --- | --- |
-|     |     |
+`enum4linux-ng` is written in python and has similar functionality with some better features like:
+1. Being able to output to files
+2. Outputting in certain formats for other tools (JSON, YAML)

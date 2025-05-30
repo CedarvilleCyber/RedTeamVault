@@ -56,10 +56,7 @@ net use \\<DC>\ipc$ "" /u:"" # Test if SMB null sessions are allowed
 - [[LDAPSearch]]
 - [[PowerView]]
 
-LDAPSearch uses an LDAP Anonymous Bind session to enumerate password policy. 
-
-```shell
-ldapsearch -h 172.16.5.5 -x -b "DC=INLANEFREIGHT,DC=LOCAL" -s sub "*" | grep -m 1 -B 10 pwdHistoryLength
+ 10 pwdHistoryLength
 ```
 
 From Windows is even easier.
