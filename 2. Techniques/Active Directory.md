@@ -115,7 +115,7 @@ runas.exe /netonly /user:<domain>\<username> cmd.exe
 With credential access and a Windows machine you can connect to the domain and use the Microsoft Management Console to enumerate machines and users in the environment. 
 # Enumerating Security Controls
 
-This Powershell will give lots of valuable information about the domain and your privileges within it. 
+This PowerShell will give lots of valuable information about the domain and your privileges within it. 
 
 ```powershell
 Get-MpComputerStatus # Check for Windows Defender
