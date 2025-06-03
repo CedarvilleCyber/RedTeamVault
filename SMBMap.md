@@ -1,3 +1,5 @@
+For Help: [WadComs](https://wadcoms.github.io/)
+
 #smb #enumeration
 SMBMap is great for ==enumerating SMB shares== from a Linux attack host. It can be used to:
 1. gather a listing of shares

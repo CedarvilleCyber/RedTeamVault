@@ -3,6 +3,9 @@
 # What is AD?
 AD is an identity/security policy management framework for managing large fleets of Windows computers. Windows comes with support for it out of the box. These techniques are grouped together into one note because they are less applicable outside of a domain context. While most organizations to make use of AD DS, it is not always in use. Use this note if and when necessary, and understand it well. 
 
+For Help: an interactive cheat sheet, containing a curated list of offensive security tools and their respective commands, to be used against Windows/AD environments.
+[WadComs](https://wadcoms.github.io/)
+
 # Domain Reconnaissance
 ## Passive
 - [[Responder]]
@@ -132,22 +135,9 @@ Get-LAPSComputers # Find LAPS-enabled devices
 - [[SMBMap]]
 - [[WinDAPSearch]]
 - [[BloodHound]]
-- Powershell ActiveDirectory Module (Windows)
+- [[Powershell ActiveDirectory Module]] (Windows)
 - [[PowerView]]
 - [[Snaffler]]
-
-```powershell
-# PowerShell Active Directory Module
-
-Get-Module # List modules available for import
-Import-Module ActiveDirectory # Import the AD module if not already present
-Get-ADDomain # Get lots of information about the domain
-Get-ADUser -Filter {ServicePrincipalName -ne "$null"} -Properties ServicePrincipalName # Get Kerberoastable users (Service Accounts)
-Get-ADTrust -Filter * # Enumerate trust relationships within domain
-Get-ADGroup -Filter * | select name # List AD groups
-Get-ADGroup -Identity <groupname> # Get detailed group info
-Get-ADGroupMember -Identity <groupname> # Get group members
-```
 
 # LOL Enumeration Solutions
 - [[DSQuery]]
