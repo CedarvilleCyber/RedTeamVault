@@ -5,6 +5,7 @@
 | Command                                                                                                | Explanation                              |
 | ------------------------------------------------------------------------------------------------------ | ---------------------------------------- |
 | python3 windapsearch.py --dc-ip 172.16.5.5 -u "" -U                                                    | # Try to enumerate with anonymous access |
-| python3 windapsearch.py --dc-ip <IP> -u "domain\\user" -p "password" -U                                | # Enumerate ALL users:                   |
-| python3 windapsearch.py --dc-ip <IP> -u "domain\\user" -p "password" -U                                | # Enumerate Domain Admins                |
+| python3 windapsearch.py --dc-ip `<IP>` -u "domain\\user" -p "password" -U                              | # Enumerate ALL users:                   |
+| python3 windapsearch.py --dc-ip `<IP>` -u "domain\\user" -p "password" --da                            | # Enumerate Domain Admins                |
 | python3 windapsearch.py --dc-ip 192.168.1.10 -u "domain\\user" -p "password" -m "Remote Desktop Users" | # Enumerate Group Members                |
+| ython3 windapsearch.py --dc-ip `<IP>` -u "domain\\user" -p "password" -PU                              | # Find privileged users                  |
