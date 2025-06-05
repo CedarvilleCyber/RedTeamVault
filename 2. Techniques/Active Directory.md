@@ -139,8 +139,9 @@ Get-LAPSComputers # Find LAPS-enabled devices
 - [[PowerView]]
 - [[Snaffler]]
 
-# LOL Enumeration Solutions
+# LOL (Living Off the Land) Enumeration Solutions
 - [[DSQuery]]
+- [[netsh]]
 
 If you can attach your own Windows VM to the domain, you can use these techniques to enumerate from it with [[Runas]] to inject valid AD credentials. 
 
