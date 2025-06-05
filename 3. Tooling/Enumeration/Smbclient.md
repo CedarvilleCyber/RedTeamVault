@@ -1,3 +1,5 @@
+For Help: [WadComs](https://wadcoms.github.io/)
+
 A tool for interacting with SMB shares
 
 ```shell
