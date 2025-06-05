@@ -9,7 +9,7 @@ bloodhound-python -u <user> -p <password> -ns <DC_IP> -d <domain> -c all # Gathe
 ```
 Using the C# distribution for Windows:
 ```powershell
-.\SharpHound.exe -c All --zipfilename <outfile> # Gather domain informatio
+.\SharpHound.exe -c All --zipfilename <outfile> # Gather domain information
 ```
 
 Starting up the local examination server to parse the data returned from the top two. 
@@ -18,6 +18,8 @@ neo4j start # Start neo4j server hosting the web interface and database
 sleep 60 # Give it time
 bloodhound # Start up the interactive graphing software to query the database.
 ```
+
+==Query Cheatsheet==: https://hausec.com/2019/09/09/bloodhound-cypher-cheatsheet/
 
 Bloodhound provides many analytical queries to show us the quickest path to the information we want. Some standouts:
 - Find all Domain Admins
