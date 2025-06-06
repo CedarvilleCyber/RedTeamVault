@@ -2,6 +2,19 @@
 
 PowerView is a powerful suite of PowerShell tools for Active Directory enumeration and compromise.
 
+## Setup:
+#### Install:
+1. ```Invoke-WebRequest -Uri "https://raw.githubusercontent.com/PowerShellMafia/PowerSploit/master/Recon/PowerView.ps1" -OutFile "PowerView.ps1"```
+2. `Set-ExecutionPolicy -Scope CurrentUser -ExecutionPolicy RemoteSigned` ==Adjust execution policy so you can run the command
+
+#### Import: So you can run it
+```powershell
+Terminal>. .\PowerView.ps1
+```
+
+`
+
+
 | **Command**                         | **Description**                                                                            |
 | ----------------------------------- | ------------------------------------------------------------------------------------------ |
 | `Export-PowerViewCSV`               | Append results to a CSV file                                                               |
@@ -9,8 +22,8 @@ PowerView is a powerful suite of PowerShell tools for Active Directory enumerati
 | `Get-DomainSPNTicket`               | Requests the Kerberos ticket for a specified Service Principal Name (SPN) account          |
 | **Domain/LDAP Functions:**          |                                                                                            |
 | `Get-Domain`                        | Will return the AD object for the current (or specified) domain                            |
-| `Get-DomainController`              | Return a list of the Domain Controllers for the specified domain                           |
-| `Get-DomainUser`                    | Will return all users or specific user objects in AD                                       |
+| ==`Get-DomainController`==          | Return a list of the Domain Controllers for the specified domain                           |
+| ==`Get-DomainUser`==                | Will return all users or specific user objects in AD                                       |
 | `Get-DomainComputer`                | Will return all computers or specific computer objects in AD                               |
 | `Get-DomainGroup`                   | Will return all groups or specific group objects in AD                                     |
 | `Get-DomainOU`                      | Search for all or specific OU objects in AD                                                |
@@ -42,9 +55,13 @@ PowerView is a powerful suite of PowerShell tools for Active Directory enumerati
 
 ```powershell
 Get-DomainUser -Identity mmorgan -Domain inlanefreight.local | Select-Object -Property name,samaccountname,description,memberof,whencreated,pwdlastset,lastlogontimestamp,accountexpires,admincount,userprincipalname,serviceprincipalname,useraccountcontrol # Enumerate user information
+
 Get-DomainGroupMember -Identity <groupname> -Recurse # Get all members of a group
+
 Get-DomainTrustMapping # Enumerate domain trusts
+
 Test-AdminAccess -ComputerName <computername>
+
 Get-DomainUser -SPN -Properties samaccountname,ServicePrincipalName # Get Kerberoastable users (Service Accts with SPN)
 
 $sid = Convert-NameToSid <user> # Get SID from username
@@ -61,4 +78,4 @@ Set-DomainUserPassword -Identity <target username> -AccountPassword <new pscrede
 
 ```
 
-PowerView is now maintained by BC-Security, who have taken over the Powershell Empire project and its GUI Starkiller. Additionally, another fork exists written in C# under the name SharpView.
+PowerView is now maintained by BC-Security, who have taken over the Powershell Empire project and its GUI Starkiller. Additionally, another fork exists written in C# under the name [[SharpView]].
