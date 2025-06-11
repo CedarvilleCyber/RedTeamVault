@@ -82,6 +82,9 @@ Get-DomainObjectACL -ResolveGUIDs -Identity <identity of interest or wildcard> |
 
 foreach($line in [System.IO.File]::ReadLines(<valid_users_file>)) {get-acl  "AD:\$(Get-ADUser $line)" | Select-Object Path -ExpandProperty Access | Where-Object {$_.IdentityReference -match '<domain>\\<user>'}} # List powers we have as the specified user
 
+Get-DomainGroup -Identity "Help Desk Level 1" | select memberof
+# Find the groups another group is a part of (Does the group have any interesting inheritance from other more privileged groups?)
+
 Set-DomainUserPassword -Identity <target username> -AccountPassword <new pscredential object> -Credential <user with privileges pscredential object> -Verbose # Reset another users' password using our ACL powers
 
 ```
