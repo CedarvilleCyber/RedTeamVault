@@ -73,6 +73,7 @@ net accounts
 # Enumerating Domain Users
 - [[LDAPSearch]]
 - [[CrackMapExec]]
+- [[Netexec]]
 - [[RPCclient]]
 - [[Enum4Linux]]
 - [[Kerbrute]]
