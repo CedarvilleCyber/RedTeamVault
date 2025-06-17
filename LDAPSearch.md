@@ -2,7 +2,7 @@
 
 LDAPSearch uses an LDAP Anonymous Bind session to enumerate password policy. 
 
-`ldapsearch -h 172.16.5.5 -x -b "DC=INLANEFREIGHT,DC=LOCAL" -s sub "*" | grep -m 1 -B`
+`ldapsearch 172.16.5.5 -x -b "DC=INLANEFREIGHT,DC=LOCAL" -s sub "*" | grep -m 1 -B`
 
 To list all users in a specific Organizational Unit (OU):
 
