@@ -64,10 +64,13 @@ Likeley username: `ruy.fernandez` or `rfernandez`
 ==In a shared xml file there are usernames and creds==
 
 ```
+rose:KxEPkKe6R8su
 angela:0fwz7Q4mSpurIt99
 Oscar:86LxLBMgEWaKUnBG
 kevin:Md9Wlq1E5bZnVDVo
 sa:MSSQLP@ssw0rd!
+ryan:WqSZAF6CysDQbGb3
+sql_svc:WqSZAF6CysDQbGb3
 ```
 
 
@@ -105,6 +108,20 @@ Ryan is part of the remote management users
 ==We have some interesting files here==:
 ![[Pasted image 20250616231857.png]]
 
-# Next: 
-1. look up how to make reverse shell better
-2. what can we find in these files
+
+### Note: Screeshots are saved here: "/home/david/.cache/thumbnails/normal/"
+
+==In the `sql-configuration.INI` file there are creds for the `sql_svc` account==:  
+![[Pasted image 20250618221317.png]]
+
+sql_svc:WqSZAF6CysDQbGb3
+
+```shell
+python3 /usr/share/doc/python3-impacket/examples/mssqlclient.py sequel.htb/sql_svc@10.10.11.51 -windows-auth
+
+# Don't forget -windows-auth!
+
+```
+
+## Ryan reused his credentials from `sql_svc`!
+ryan:WqSZAF6CysDQbGb3
