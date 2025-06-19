@@ -98,7 +98,7 @@ Looks like we have a password and a valid account!
 `python3 /usr/share/doc/python3-impacket/examples/GetUserSPNs.py`
 
 ## Brute RIDs with netexec for user enumeration:
-`netexec smb cicada.htb -u zaa -p --rid-brute`
+`netexec smb cicada.htb -u zaa -p "" --rid-brute`
 
 Found users:
 ![[Pasted image 20250614165119.png]]

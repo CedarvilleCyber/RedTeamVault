@@ -38,7 +38,7 @@ Known Usernames .. administrator, guest, krbtgt, domain admins, root, bin, none 
 	- This shows a file that we can get.
 ![[Pasted image 20250518174844.png]]
 
-==Very small sorry== There is a username and password in this file!
+==Very small, sorry== There is a username and password in this file!
 And This is the file it appears to be XML. I am not totally sure what to do with that but I know XXE is a think, time for some research. 
 
 ID = ARCHETYPE\sql_svc

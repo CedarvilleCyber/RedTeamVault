@@ -28,6 +28,8 @@ Bloodhound provides many analytical queries to show us the quickest path to the 
 - Find Computers where Domain Users are Local Admin
 - List all Kerberoastable Accounts
 - Find Kerberoastable Users with most privileges
+- Find **Workstations** where Domain Users can RDP
+- Find **Servers** where Domain Users can RDP
 
 https://github.com/BloodHoundAD/BloodHound
 
