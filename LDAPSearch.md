@@ -8,7 +8,7 @@ To list all users in a specific Organizational Unit (OU):
 
 `ldapsearch -D "cn=admin,dc=example,dc=com" -w "password" -b "ou=users,dc=example,dc=com" "(objectClass=person)" cn`
 
-==Find CA server!== 
+==Find CA server!== [[Certipy]]
 ```shell
 ldapldapsearch -x -H ldap://<dc-ip> -D '<username>@<domain>' -w 'Plmokn!?#123111'
   -b "CN=Enrollment Services,CN=Public Key Services,CN=Services,CN=Configuration,DC=<domain>,DC=<domain>"
