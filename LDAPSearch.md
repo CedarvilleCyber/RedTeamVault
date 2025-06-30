@@ -8,6 +8,14 @@ To list all users in a specific Organizational Unit (OU):
 
 `ldapsearch -D "cn=admin,dc=example,dc=com" -w "password" -b "ou=users,dc=example,dc=com" "(objectClass=person)" cn`
 
+==Find CA server!== 
+```shell
+ldapldapsearch -x -H ldap://<dc-ip> -D '<username>@<domain>' -w 'Plmokn!?#123111'
+  -b "CN=Enrollment Services,CN=Public Key Services,CN=Services,CN=Configuration,DC=<domain>,DC=<domain>"
+```
+'''
+```
+
 ## ad-ldapdomaindump.py
 
 a Python script designed to automate the process of extracting comprehensive information from Active Directory via LDAP. It's particularly useful for gathering a wide range of data in a structured format.
