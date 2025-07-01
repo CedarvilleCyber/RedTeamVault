@@ -96,4 +96,17 @@ Get-DomainUser -PreauthNotRequired | select samaccountname,userprincipalname,use
 
 ```
 
+
+# Domain Trusts [[netdom]]
+```powershell
+
+Get-DomainTrust
+# Is there another subdomain or forest that we can hack into
+
+Get-DomainTrustMapping
+
+Get-DomainUser -Domain LOGISTICS.INLANEFREIGHT.LOCAL | select SamAccountName
+# Once you have enumerated trusts, look at all users in the child domain
+
+```
 PowerView is now maintained by BC-Security, who have taken over the Powershell Empire project and its GUI Starkiller. Additionally, another fork exists written in C# under the name [[SharpView]].
