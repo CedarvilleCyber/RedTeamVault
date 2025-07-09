@@ -19,6 +19,7 @@ For Help: an interactive cheat sheet, containing a curated list of offensive sec
 - [[Nmap]]
 - [[Fping]]
 - [[Kerbrute]]
+- [[Pingcastle]]
 - LOLBins
 
 ```shell
