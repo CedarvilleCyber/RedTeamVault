@@ -5,7 +5,7 @@ That being said, you should try to find a gap in our CPTC team's collective skil
 ## Learning Paths
 The majority of the rooms in these paths are paywalled. 
 ### Junior Penetration Tester
-I split up the path into free rooms and premium rooms (paywalled) so you can do the free rooms, then go back and do the premium rooms all at once. You won't need to pay for THM Premium for as long if you do it this way.
+I split up the path into free rooms and premium rooms (paywalled) so you can do the free rooms, then go back and do the premium rooms all at once. You won't need to pay for THM Premium for as long if you do it this way, but some of the rooms make more sense when done in the intended order, so use your best judgment. 
 #### Free Rooms
 ##### Intro to Cyber Security
 - [Offensive Security Intro](https://tryhackme.com/room/offensivesecurityintro)
@@ -63,6 +63,7 @@ The entire module is paywalled except for the SQL injection room at the very end
 - [What the Shell?](https://tryhackme.com/room/introtoshells)
 - [Windows Privilege Escalation](https://tryhackme.com/room/windowsprivesc20)
 ### Red Teaming
+This is a more advanced path. It would not be good preparation for CPTC, so I recommend steering clear of this one unless you're preparing for a red teaming job interview of some kind.
 ### Web Application Pentesting
 ### Offensive Pentesting
 Kind of a redundant name, don't you think?
@@ -85,7 +86,7 @@ I don't know how credible this individual is, but she put together a giant list 
 - [ ] Shodan.io https://tryhackme.com/room/shodan
 #### Level 2 - Tooling
 - [ ] Tmux https://tryhackme.com/room/rptmux
-	- This is a superior [Tmux Cheat Sheet](https://tmuxcheatsheet.com/)
+	- The [Tmux Cheat Sheet](https://tmuxcheatsheet.com/) website is also helpful as a reference for the future.
 - [ ] Nmap https://tryhackme.com/room/furthernmap
 - [ ] Web Scanning 
 - [ ] Sublist3r 
@@ -136,7 +137,6 @@ I don't know how credible this individual is, but she put together a giant list 
 - [ ] Sudo Buffer Overflow https://tryhackme.com/room/sudovulnsbof
 - [ ] Windows Privesc Arena https://tryhackme.com/room/windowsprivescarena
 - [ ] Linux Privesc Arena https://tryhackme.com/room/linuxprivescarena
-- [ ] Windows Privesc https://tryhackme.com/room/windows10privesc
 - [ ] Blaster https://tryhackme.com/room/blaster
 - [ ] Ignite https://tryhackme.com/room/ignite
 - [ ] Kenobi https://tryhackme.com/room/kenobi
@@ -159,11 +159,11 @@ I don't know how credible this individual is, but she put together a giant list 
 - [ ] Blue Print https://tryhackme.com/room/blueprint
 - [ ] Anthem https://tryhackme.com/room/anthem
 - [ ] Relevant https://tryhackme.com/room/relevant
-
 # HackTheBox
 ## HTB Academy
 - Penetration Tester Job Role Path
-- Active Directory Penetration Tester Job Role Path
+- Active Directory Penetration Tester Job Role Path 
+	- HTB recommends doing the pentester job role path first
 ## HTB Machines
 https://docs.google.com/spreadsheets/u/1/d/1dwSMIAPIam0PuRBkCiDI88pU3yzrqqHkDtBngUHNCw8/htmlview
 # Web Security Academy
@@ -178,9 +178,7 @@ I recommend checking out their [learning paths.](https://portswigger.net/web-sec
 I think these paths would be very helpful as well:
 - Server-side vulnerabilities 
 	- This is an "apprentice" level path, meaning it's more accessible than the others.
-- NoSQL Injection
 - Cross-Site Request Forgery
-
 # Miscellaneous
 Open-Source Red Team Toolkit:
 - https://github.com/infosecn1nja/Red-Teaming-Toolkit?tab=readme-ov-file#Payload%20Development

@@ -24,6 +24,8 @@ echo "echo "sleep 1;" >> ~/.bashrc">> ~/.bashrc # Add a longer sleep to their te
 cat /dev/random > /dev/[pts-num-of-opponent] # write random stuff to your opponent's terminal. The brackets are just to show you that the tty-num is a parameter
 
 telnet towel.blinkenlights.nl > /dev/[pts-num-of-opponent]
+
+Alias cd .. to cd . # You'll have to Google this or ask Chat. When you do, add it here.
 ```
 
 # Windows
