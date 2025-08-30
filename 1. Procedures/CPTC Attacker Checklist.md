@@ -69,4 +69,4 @@ Utilize available techniques to stay hidden on the endpoint and penetrate deeper
 - Reports should be professional. As in largely white and in printable formats. None of this denim colored reporting anymore. That was embarrassing. 
 - Template should be prepared beforehand. 
 
-[[Additional Valuable Resources]]
+[[Valuable Resources]]

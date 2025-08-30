@@ -80,7 +80,7 @@ Once we get access to the web server machine:
 
 As we train, we will go through multiple HTB machines at once to simulate the experience of hacking an interconnected network. Make sure you take notes and ***fill out the report as you go***.
 
-Team members should familiarize themselves with the best online resources. We collected some in [[Additional Valuable Resources]]. 
+Team members should familiarize themselves with the best online resources. We collected some in [[Valuable Resources]]. 
 - USE THESE RESOURCES when you practice and when we compete.
 ## Phishing Inject
 https://github.com/dafthack/MailSniper
