@@ -1,4 +1,13 @@
-For freshmen or those with no offensive cyber experience, I recommend watching IppSec videos (YouTube) and taking notes. For those willing to get a TryHackMe subscription, their Junior Penetration Tester path is a good intro.
+For freshmen or those with no offensive cyber experience, I recommend these resources:
+- HackTheBox Labs Starting Point
+	- Walks you through the essentials of hacking. Focus: hands-on learning
+- TryHackMe Junior Penetration Tester path (paywalled)
+	- Essentials of hacking. You'll be reading about tools, then trying them.
+- IppSec
+	- YouTube channel + reference website (https://ippsec.rocks)
+	- IppSec hacks HTB machines. Watching his videos will help you develop your methodology.
+
+For the CPTC team, I've assembled these training resources: 
 
 >[!important] Academy & Machines
 >Use the HackTheBox [Academy to Labs](https://academy.hackthebox.com/academy-lab-relations) feature to determine which machines are related to the tactics you've been learning in the HTB Academy. This way, you can learn a tactic in HTB Academy, then practice it on a couple relevant HTB Machines.
