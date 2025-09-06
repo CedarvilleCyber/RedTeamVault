@@ -44,6 +44,7 @@ All training resources here (unless otherwise stated) link to PortSwigger Academ
 ##### A01 Broken Access Control
 - [Access Control](https://portswigger.net/web-security/access-control)
 	- Includes **IDOR**
+- [CSRF](https://portswigger.net/web-security/csrf)
 ##### A02 Cryptographic Failures
 - Make a list of 10ish [Common Weaknesses and Exposures](https://owasp.org/Top10/A02_2021-Cryptographic_Failures/#list-of-mapped-cwes) (CWEs) associated with Cryptographic Failures that you think we need to look for. Then figure out how to check for them.
 	- Remember to send me the list once it's compiled. Make a section for how to find each type of CWE in the web app.
