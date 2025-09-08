@@ -40,6 +40,8 @@ Burp Suite competency is required.
 They should also do the labs in their assigned PortSwigger Academy training course.
 
 All training resources here (unless otherwise stated) link to PortSwigger Academy.
+
+Use the [HackTricks Web Methodology](https://book.hacktricks.wiki/en/network-services-pentesting/pentesting-web/index.html) to guide you as you attack the web server.
 ## Web Team Member 1
 ##### A01 Broken Access Control
 - [Access Control](https://portswigger.net/web-security/access-control)
