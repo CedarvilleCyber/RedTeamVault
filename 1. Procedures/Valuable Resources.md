@@ -57,5 +57,8 @@ A more in-depth hacking platform with advanced topics. More difficult, but more 
 - and much more! I highly recommend it. 
 ## Assorted Materials
 - [Vulnerability Research Course Materials](https://github.com/tj-oconnor/undergrad-vr)
-- The [Malcore Malware Bible](https://bible.malcore.io) is a resource created to help people understand malware. This can be useful for reverse engineering and malware analysis, although it may no longer be available.
+- The [Malcore Malware Bible](bible.malcore.io) is a resource created to help people understand malware. This can be useful for reverse engineering and malware analysis, although it may no longer be available.
 - The Game of Active Directory (GOAD) is very useful for learning Active Directory exploitation. 
+
+This is a list of HTB machines and other challenges that are good practice for the OSCP.
+- https://docs.google.com/spreadsheets/d/18weuz_Eeynr6sXFQ87Cd5F0slOj9Z6rt/edit?gid=487240997#gid=487240997
