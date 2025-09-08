@@ -1,3 +1,4 @@
+# Communal Attempt
 initial scan: `sudo nmap <ip> -T4 -p- --open -oN init.nmap`
 
 Creds: `j.fleischman / J0elTHEM4n1990!`
@@ -12,3 +13,70 @@ Creds: `j.fleischman / J0elTHEM4n1990!`
 We found a list of CVEs on the SMB server in the IT share. We then used exploit code 
 
 `sudo responder -I tun0 -w -d -F` 
+# Solo Attempt
+Creds: `j.fleischman / J0elTHEM4n1990!`
+IP: `10.10.11.69`
+
+## Initial scan
+```
+sudo nmap 10.10.11.69 -T4 -oN init.nmap
+```
+Services revealed: 
+- 53 | DNS
+- 88 | Kerberos
+- 139 | NetBIOS
+- 389 | LDAP
+- 445 | SMB
+- 464/tcp  open  kpasswd5
+- 593/tcp  open  http-rpc-epmap
+- 636/tcp  open  ldapssl (LDAP over SSL)
+- 3268/tcp open  globalcatLDAP
+- 3269/tcp open  globalcatLDAPssl
+- 5985/tcp open  wsman
+## Enumeration
+### SMB
+Let's try looking at the SMB shares. Log in with `smbclient`: 
+```shell
+smbclient -N -L \\10.10.11.69    # null login (-N), list shares (-L)
+
+\> ls
+```
+- Unique share: IT
+- All the default shares showed up and were either password-protected or empty. The IT share, however, is not a default share, so let's look into it. 
+
+```
+smbclient \\\\10.10.11.69\\IT -U 'j.fleischman'
+\> exit
+mkdir smb_IT_share
+cd smb_IT_share
+smbclient \\\\10.10.11.69\\IT -U 'j.fleischman'
+\> mget *
+```
+- I created the `smb_IT_share` directory to keep myself organized. This puts all the stuff from the IT share into a folder that won't be used for anything else.
+- Note: `mget *` does not recurse into subdirectories and download the contents - it only downloads files in the main directory. That's good enough for this situation, though. 
+
+Using our creds, we were able to log into the IT share, and there's some interesting stuff in there. However, we went this way last time and weren't able to get into the box, so I'm going to enumerate a couple other services before proceeding. 
+### LDAP
+To enumerate `ldap`, we're going to use `nxc` (NetExec). Use https://netexec.wiki to learn about this incredible tool.
+
+```
+nxc ldap 10.10.11.69
+```
+
+Output: 
+`LDAP        10.10.11.69     389    DC01             [*] Windows 10 / Server 2019 Build 17763 (name:DC01) (domain:fluffy.htb)`
+- This reveals the LDAP service on the default port (389)
+
+Now, let's try enumerating the users on the machine.
+```
+nxc ldap 10.10.11.69 -u 'j.fleischman' -p 'J0elTHEM4n1990!' --users
+```
+
+Result: 
+![[Pasted image 20250908134043.png]]
+
+Enumerating the groups: 
+```
+nxc ldap 10.10.11.69 -u 'j.fleischman' -p 'J0elTHEM4n1990!' --groups
+```
+- This is not very helpful - way too many default groups
