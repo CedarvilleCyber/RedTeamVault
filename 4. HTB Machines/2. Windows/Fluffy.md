@@ -32,7 +32,9 @@ Services revealed:
 - 636/tcp  open  ldapssl (LDAP over SSL)
 - 3268/tcp open  globalcatLDAP
 - 3269/tcp open  globalcatLDAPssl
-- 5985/tcp open  wsman
+- 5985/tcp open  wsman - WinRM
+
+No RDP. Since we're starting with creds, that would be too easy :)
 ## Enumeration
 ### SMB
 Let's try looking at the SMB shares. Log in with `smbclient`: 
@@ -56,6 +58,8 @@ smbclient \\\\10.10.11.69\\IT -U 'j.fleischman'
 - Note: `mget *` does not recurse into subdirectories and download the contents - it only downloads files in the main directory. That's good enough for this situation, though. 
 
 Using our creds, we were able to log into the IT share, and there's some interesting stuff in there. However, we went this way last time and weren't able to get into the box, so I'm going to enumerate a couple other services before proceeding. 
+
+I think there's a good chance that this CVE is for privilege escalation, not initial access, so hopefully we'll be able to get in through another way, then use this CVE to get root access on the box. 
 ### LDAP
 To enumerate `ldap`, we're going to use `nxc` (NetExec). Use https://netexec.wiki to learn about this incredible tool.
 
@@ -80,3 +84,32 @@ Enumerating the groups:
 nxc ldap 10.10.11.69 -u 'j.fleischman' -p 'J0elTHEM4n1990!' --groups
 ```
 - This is not very helpful - way too many default groups
+
+Based on the services available on the machine, it's likely a domain controller. (Chat helped me identify the "classic DC fingerprint")
+![[Pasted image 20250909205355.png]]
+
+Using this NetExec command, I was able to verify that this machine is a domain controller.
+```
+nxc ldap 10.10.11.69 -u 'j.fleischman' -p 'J0elTHEM4n1990!' --dc-list
+```
+- Relevant output: ==DC01.fluffy.htb = 10.10.11.69==
+### WinRM (wsman - port 5985) Login Attempt
+WinRM is a Windows remote management protocol. Since it's open and we have authorized credentials, the obvious next step is to try to log in so we can "remotely manage" this box :)
+
+`evil-winrm` is a tool used to log into machines by using WinRM from Kali.
+```
+evil-winrm -i 10.10.11.69 -u j.fleischman -p J0elTHEM4n1990!
+```
+
+Unfortunately, our user account doesn't have permission to log in via WinRM. By default, only administrators can use WinRM, so this is unsurprising. 
+### PsExec (SMB - port 445) Login Attempt
+Next, I tried logging into the machine by using PsExec, which is a lightweight remote management tool. 
+
+```
+impacket-psexec fluffy.htb/'j.fleischman':'J0elTHEM4n1990!'@10.10.11.69 cmd.exe
+```
+- Unfortunately, this also didn't work. 
+
+![[Pasted image 20250909214245.png]]
+
+Maybe I was wrong and one of the CVEs is the path to initial access. I'll have to look into that. 
