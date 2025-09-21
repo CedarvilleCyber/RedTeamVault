@@ -15,10 +15,10 @@ curl -O https://raw.githubusercontent.com/nationalcptc-teamtools/University-of-F
 - Kerbrute
 - evilWinRM
 - Impacket
-- Nuclei
-- Nikto
 # Web App Tools
 - Burp Suite
 - SQLmap
 - ffuf
 - seclists
+- nikto
+- nuclei
