@@ -32,8 +32,29 @@ This is a CPTC checklist to help us when we forget command syntax. It'll keep us
 ## Nick
 ==CHOOSE attacks you want to try from the 2025 Training Plan.==
 # Privilege Escalation
+## Linux
+`grep sh /etc/passwd | cut -d ":" -f 1 > users.txt` makes a user list for brute-forcing
+
+>  https://gtfobins.github.io/ - a list of native binaries for privilege escalation.
+
+GTFOBins is basically an index of Linux PrivEsc methods. How to use it:
+1. Check for sudo privileges on the victim machine: `sudo -l`
+2. Check for SetUID executables: `find / -perm -4000 2>/dev/null`
+3. Check for executables with capabilities: `getcap -r / 2>/dev/null`
+4. Check the capabilities of your user: `capsh --print`
+5. ==Look up ***all*** of your findings on GTFOBins.==
+## Windows
+List saved credentials:
+`cmdkey /list`
+
+Use saved credentials:
+`runas /savecred /user:admin cmd.exe`
+
+https://lolbas-project.github.io/ - a list of native binaries, scripts, and libraries for PrivEsc.
+## Both
 Get kernel version w/ `uname -a` (Linux) or `systeminfo` (Windows), then search for CVEs here:
-- https://www.linuxkernelcves.com/cves
+- https://github.com/SecWiki/linux-kernel-exploits
+- https://github.com/SecWiki/windows-kernel-exploits
 # Lateral Movement Options
 ## Linux 
 - **SSH** (port 22) `ssh user@ip`
