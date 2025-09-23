@@ -27,6 +27,37 @@ This is a CPTC checklist to help us when we forget command syntax. It'll keep us
 ## David M.
 - [ ] Find web app versions and Google CVEs in those versions
 - [ ] SSRF
+### Password Spraying w/ Hydra
+Hydra's syntax can be unintuitive, so look it up.
+- `-L` specifies a username wordlist
+- `-P` specifies a password wordlist 
+- `-o` outputs to a file
+- `-t` to specify a number of **threads** (speeds things up)
+
+To use Hydra against FTP (Password Guessing):
+`hydra -l username -P /path/to/passlist ftp://<ip-addr>`
+
+SSH and SMTP share the same syntax, but with `ssh://` or `smtp://` instead of `ftp://`
+
+>[!warning] Examine the Login Request
+>Login requests vary in formatting. If you don't get the format right, your password spraying won't work. Use BurpSuite to examine the login page and failure response text (ex: "invalid login" or "wrong creds") before you try Hydra.
+>
+>Doing so will make it easier to get Hydra to work, since you need to know how the authentication works and what result you get on an invalid login to set up Hydra correctly.
+
+Examples for HTTP(S):
+```shell
+# example for GET requests
+hydra -L usernames.txt -P rockyou.txt login.example.com http-get-form "/login.php?username=^USER^&password=^PASS^:Login failed"
+
+# example for POST requests
+hydra -L usernames.txt -P rockyou.txt login.example.com http-post-form "/login.php:username=^USER^&password=^PASS^:Login failed"
+```
+
+Tips:
+- Ask ChatGPT to explain the syntax if you're confused
+- Always double-check the **form parameters** in Burp Suite or browser dev tools. Field names often aren’t just `username` and `password`. They might be `user`, `pwd`, `login`, etc.
+- The **failure string** is critical. If you get it wrong, Hydra will either say “all guesses worked” or “all failed.” Look at the HTTP response to copy a reliable error message.
+
 ## Nathaniel
 ==CHOOSE attacks you want to try from the 2025 Training Plan.==
 ## Nick
