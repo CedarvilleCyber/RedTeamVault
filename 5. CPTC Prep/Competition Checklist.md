@@ -6,7 +6,10 @@ This is a CPTC checklist to help us when we forget command syntax. It'll keep us
 >Make sure each scan outputs to a text file. Then, copy the scan outputs to a USB or to your local machine so we can use the scan outputs when writing our report after the competition. 
 # Setup
 - [ ] Run the tool setup script.
-- [ ] Run the University of Florida logging script.
+- [ ] Run the University of Florida logging script. (Is this how we are going to track every command?)
+- [ ] How are we going to communicate during the competition?
+- [ ] We should get a big general password list together 
+- [ ] Get a network map on the whiteboard for visualization, that helps a ton
 # Scanning
 ## Network Scanning
 - [ ] `sudo nmap 10.10.0.0/16 -T4 -sn -oN ping.scan` 
@@ -23,6 +26,17 @@ This is a CPTC checklist to help us when we forget command syntax. It'll keep us
 - [ ] John - SMB share enumeration
 - [ ] Josiah - SMB and LDAP user enumeration
 - [ ] Lamoreaux - check Kerberos pre-auth and start Kerberos attacks
+
+## Lamoreaux - AD Plan:
+1. `ldapsearch` and `rpcclient` to see if anonymous binding is allowed
+2. enum4linux, crackmapexec
+3. Attempt to get a list of valid users, try pre-auth, try to kerberoast (`kerbrute`, `impacket`)
+4. Try to harvest credentials with GPP, XML files, with nxe
+5. get a session on a windows machine
+6. download bloodhound and run a query
+7. privesc
+8. Look for more creds to spread to other machinesPP
+
 # Exploitation
 ## David M.
 - [ ] Find web app versions and Google CVEs in those versions

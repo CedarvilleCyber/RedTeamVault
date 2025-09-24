@@ -3,6 +3,8 @@
 - Sliver
 - WinPEAS
 - LinPEAS
+- ==AutoRecon== 
+- 
 
 ```bash
 curl -O https://raw.githubusercontent.com/nationalcptc-teamtools/University-of-Florida/refs/heads/main/cptc2025-tools/logging_setup.sh
