@@ -1,4 +1,13 @@
-For freshmen or those with no offensive cyber experience, I recommend watching IppSec videos (YouTube) and taking notes. For those willing to get a TryHackMe subscription, their Junior Penetration Tester path is a good intro.
+For freshmen or those with no offensive cyber experience, I recommend these resources:
+- HackTheBox Labs Starting Point
+	- Walks you through the essentials of hacking. Focus: hands-on learning
+- TryHackMe Junior Penetration Tester path (paywalled)
+	- Essentials of hacking. You'll be reading about tools, then trying them.
+- IppSec
+	- YouTube channel + reference website (https://ippsec.rocks)
+	- IppSec hacks HTB machines. Watching his videos will help you develop your methodology.
+
+For the CPTC team, I've assembled these training resources: 
 
 >[!important] Academy & Machines
 >Use the HackTheBox [Academy to Labs](https://academy.hackthebox.com/academy-lab-relations) feature to determine which machines are related to the tactics you've been learning in the HTB Academy. This way, you can learn a tactic in HTB Academy, then practice it on a couple relevant HTB Machines.
@@ -31,10 +40,13 @@ Burp Suite competency is required.
 They should also do the labs in their assigned PortSwigger Academy training course.
 
 All training resources here (unless otherwise stated) link to PortSwigger Academy.
+
+Use the [HackTricks Web Methodology](https://book.hacktricks.wiki/en/network-services-pentesting/pentesting-web/index.html) to guide you as you attack the web server.
 ## Web Team Member 1
 ##### A01 Broken Access Control
 - [Access Control](https://portswigger.net/web-security/access-control)
 	- Includes **IDOR**
+- [CSRF](https://portswigger.net/web-security/csrf)
 ##### A02 Cryptographic Failures
 - Make a list of 10ish [Common Weaknesses and Exposures](https://owasp.org/Top10/A02_2021-Cryptographic_Failures/#list-of-mapped-cwes) (CWEs) associated with Cryptographic Failures that you think we need to look for. Then figure out how to check for them.
 	- Remember to send me the list once it's compiled. Make a section for how to find each type of CWE in the web app.
@@ -80,7 +92,7 @@ Once we get access to the web server machine:
 
 As we train, we will go through multiple HTB machines at once to simulate the experience of hacking an interconnected network. Make sure you take notes and ***fill out the report as you go***.
 
-Team members should familiarize themselves with the best online resources. We collected some in [[Additional Valuable Resources]]. 
+Team members should familiarize themselves with the best online resources. We collected some in [[Valuable Resources]]. 
 - USE THESE RESOURCES when you practice and when we compete.
 ## Phishing Inject
 https://github.com/dafthack/MailSniper
