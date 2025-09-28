@@ -10,6 +10,7 @@ This is a CPTC checklist to help us when we forget command syntax. It'll keep us
 - [ ] CPTC will provide us with a OneDrive account. That's where we will store all our notes and collaboration resources (including the final report). 
 	- [ ] Make a word doc for each host in the environment and section it off by service
 - [ ] We should get a big general password list together. ==**ALWAYS try default creds first**==
+	- Do some OSINT to make a custom password list.
 	- `/seclists/Discovery/Web-Content/directory-list-2.3-medium.txt` (ffuf/gobuster)
 	- `/seclists/Usernames/top-usernames-shortlist.txt` (usernames for login attempts)
 	- `/seclists/Passwords/Leaked-Databases/rockyou.txt` (passwords)
@@ -17,8 +18,12 @@ This is a CPTC checklist to help us when we forget command syntax. It'll keep us
 # Scanning
 ## Network Scanning
 - [ ] `sudo nmap 10.10.0.0/16 -T4 -sn -oN ping.scan` 
-- [ ] `sudo nmap <ip-addrs> -T4 -oN quick.scan` // do we feel this scan is necessary? is port.scan fast enough to skip quick.scan? 
-- [ ] `sudo nmap <ip-addrs> -T4 -sC -sV -oN port.scan`
+- [ ] `sudo nmap <ip-addrs> -T4 -p- --open -oN allports.scan`
+- [ ] `sudo nmap <ip-addrs> -T4 -sC -sV -oN port-version.scan`
+- [ ] `sudo nmap <ip-addrs> -T4 -sU -oN udp.scan`
+- [ ] `sudo nmap -p- -A -T4 -sV --script vuln <target-ip> -oN in-depth.scan` // start the scan and move on
+## Network Version Enumeration
+Now we have version numbers. Use SearchSploit and the CVE database to find CVEs for all services.
 ## Web App Scanning
 - [ ] `nikto -host <url-or-ip> -o nikto.txt`
 	- David
@@ -30,7 +35,6 @@ This is a CPTC checklist to help us when we forget command syntax. It'll keep us
 - [ ] John - SMB share enumeration
 - [ ] Josiah - SMB and LDAP user enumeration
 - [ ] Lamoreaux - check Kerberos pre-auth and start Kerberos attacks
-
 ## Lamoreaux - AD Plan:
 1. `ldapsearch` and `rpcclient` to see if anonymous binding is allowed
 2. [[enum4linux]], crackmapexec
