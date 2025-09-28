@@ -1,4 +1,4 @@
-- GreenBone vulnerability scanner (pre-installed)
+- GreenBone vulnerability scanner (pre-installed on their environment)
 - Hashcat
 - Sliver
 - WinPEAS
