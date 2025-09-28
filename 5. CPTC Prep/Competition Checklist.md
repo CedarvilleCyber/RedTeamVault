@@ -38,6 +38,7 @@ Now we have version numbers. Use SearchSploit and the CVE database to find CVEs 
 ## Lamoreaux - AD Plan:
 1. `ldapsearch` and `rpcclient` to see if anonymous binding is allowed
 2. [[enum4linux]], crackmapexec
+	1. `enum4linux -a <target-ip>`
 3. Attempt to get a list of valid users, try pre-auth, try to kerberoast (`kerbrute`, `impacket`)
 4. Try to harvest credentials with GPP, XML files, with nxe
 5. get a session on a windows machine
