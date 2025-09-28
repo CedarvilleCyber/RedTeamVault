@@ -37,9 +37,15 @@ Now we have version numbers. Use SearchSploit and the CVE database to find CVEs 
 - [ ] Lamoreaux - check Kerberos pre-auth and start Kerberos attacks
 ## Lamoreaux - AD Plan:
 1. `ldapsearch` and `rpcclient` to see if anonymous binding is allowed
-2. [[enum4linux]], crackmapexec
-	1. `enum4linux -a <target-ip>`
+2. [[enum4linux]], [nxe](https://www.netexec.wiki/)
+	1. `enum4linux -a <target-ip>` 
 3. Attempt to get a list of valid users, try pre-auth, try to kerberoast (`kerbrute`, `impacket`)
+	1. ==Kerberoasting== Requires a valid account: 
+```nxc
+nxc ldap <DC> -u <user> -p <password> --kerberoasting kerb_hashes.txt # 
+nxc ldap <DC> -u <user> -p <password> --users # Get a list of valid users
+```
+
 4. Try to harvest credentials with GPP, XML files, with nxe
 5. get a session on a windows machine
 6. download bloodhound and run a query

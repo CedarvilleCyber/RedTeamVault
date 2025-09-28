@@ -1,5 +1,5 @@
 ```
-```A powerful post-exploitation enumeration and attack tool designed for **penetration testers and red teamers**. It simplifies and automates interaction with network services like **SMB, RDP, WinRM, MSSQL, LDAP**, and more.
+A powerful post-exploitation enumeration and attack tool designed for **penetration testers and red teamers**. It simplifies and automates interaction with network services like **SMB, RDP, WinRM, MSSQL, LDAP**, and more.
 
 Originally called **CrackMapExec (CME)**, NetExec is essentially a Python-based “Swiss Army knife” for assessing **Active Directory environments**, especially over **SMB**.
 ```
