@@ -33,7 +33,7 @@ This is a CPTC checklist to help us when we forget command syntax. It'll keep us
 
 ## Lamoreaux - AD Plan:
 1. `ldapsearch` and `rpcclient` to see if anonymous binding is allowed
-2. enum4linux, crackmapexec
+2. [[enum4linux]], crackmapexec
 3. Attempt to get a list of valid users, try pre-auth, try to kerberoast (`kerbrute`, `impacket`)
 4. Try to harvest credentials with GPP, XML files, with nxe
 5. get a session on a windows machine
