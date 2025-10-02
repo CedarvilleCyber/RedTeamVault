@@ -26,14 +26,14 @@ This is a CPTC checklist to help us when we forget command syntax. It'll keep us
 Now we have version numbers. Use SearchSploit and the CVE database to find CVEs for all services.
 ## Web App Scanning
 - [ ] `nikto -host <url-or-ip> -o nikto.txt`
-	- David
 - [ ] `nuclei -u <url-or-ip> -o nuclei.txt`
+	- David
+- [ ] Miscellaneous Service Enumeration (database default creds, FTP, etc)
 	- Nathaniel
 - [ ] GreenBone // technically not but it fits well here
 	- Nick
 ## AD Enumeration
-- [ ] John - SMB share enumeration
-- [ ] Josiah - SMB and LDAP user enumeration
+- [ ] See the Hardaway's checklist
 - [ ] Lamoreaux - check Kerberos pre-auth and start Kerberos attacks
 ## Lamoreaux - AD Plan:
 ###### `ldapsearch` and `rpcclient` to see if anonymous binding is allowed
@@ -97,11 +97,6 @@ Tips:
 - Ask ChatGPT to explain the syntax if you're confused
 - Always double-check the **form parameters** in Burp Suite or browser dev tools. Field names often aren’t just `username` and `password`. They might be `user`, `pwd`, `login`, etc.
 - The **failure string** is critical. If you get it wrong, Hydra will either say “all guesses worked” or “all failed.” Look at the HTTP response to copy a reliable error message.
-
-## Nathaniel
-==CHOOSE attacks you want to try from the 2025 Training Plan.==
-## Nick
-==CHOOSE attacks you want to try from the 2025 Training Plan.==
 # Privilege Escalation
 ## Linux
 `grep sh /etc/passwd | cut -d ":" -f 1 > users.txt` makes a user list for brute-forcing
